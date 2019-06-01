@@ -2,6 +2,11 @@ language: java
 jdk:
 - oraclejdk8
 
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
 install: ant
 
 after_success:
