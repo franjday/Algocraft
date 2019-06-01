@@ -1,6 +1,8 @@
 # Algocraft
 TP2 - Algocraft
 
+[![Build Status](https://travis-ci.org/franjday/Algocraft.svg?branch=master)](https://travis-ci.org/franjday/Algocraft)
+
 # Entrega 1 (Jueves 6 de junio)
 ## Tests de Herramientas:
 - [ ] Se crea hacha de madera con con su durabilidad y fuerza correspondiente.
