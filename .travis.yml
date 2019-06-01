@@ -3,9 +3,7 @@ jdk:
 - oraclejdk8
 
 notifications:
-  email:
-    on_success: never
-    on_failure: never
+  email: false
 
 install: ant
 
