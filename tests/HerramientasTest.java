@@ -1,5 +1,4 @@
-import herramientas.Hacha;
-import herramientas.Herramienta;
+import herramientas.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

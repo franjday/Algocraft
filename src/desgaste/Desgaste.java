@@ -1,6 +1,6 @@
-package herramientas;
+package desgaste;
 
-public class Desgaste {
+public abstract class Desgaste {
     protected int durabilidad;
     protected int fuerza;
 
@@ -9,7 +9,13 @@ public class Desgaste {
         this.fuerza = fuerza;
     }
 
-    public int getDurabilidad{
+    public int getDurabilidad(){
         return this.durabilidad;
     }
+
+    public int getFuerza(){
+        return this.fuerza;
+    }
+
+    public abstract void desgastar();
 }

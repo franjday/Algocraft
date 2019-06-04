@@ -1,19 +1,18 @@
 package herramientas;
 
+import desgaste.Desgaste;
+
 public abstract class Herramienta {
     protected Desgaste desgaste;
 
-    public Herramienta(){
-        this.inicializarDesgaste();
-    }
-    public int getDurabilidad{
-        return desgaste.durabilidad();
+    public Herramienta(){ }
+    public int getDurabilidad(){
+        return desgaste.getDurabilidad();
     }
 
-    public int getFuerza{
-        return desgaste.fuerza();
+    public int getFuerza(){
+        return desgaste.getFuerza();
     }
 
-    protected abstract void inicializarDesgaste();
     public abstract Herramienta usar();
 }
