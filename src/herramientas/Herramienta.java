@@ -1,3 +1,5 @@
+package herramientas;
+
 public abstract class Herramienta {
     protected Desgaste desgaste;
 

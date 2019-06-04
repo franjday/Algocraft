@@ -1,3 +1,5 @@
+package herramientas;
+
 public class Desgaste {
     protected int durabilidad;
     protected int fuerza;
