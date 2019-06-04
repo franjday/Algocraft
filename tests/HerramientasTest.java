@@ -1,4 +1,4 @@
-import herramientas.*;
+import modelo.herramientas.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -6,71 +6,81 @@ import static org.junit.Assert.assertEquals;
 public class HerramientasTest {
 
     @Test
-    public void testHachaDeMaderaCon100Durabilidad{
-        Herramienta unHachaDeMadera = new Hacha(100, 2);
+    public void testHachaDeMaderaCon100Durabilidad(){
+        Constructor constructor = new Constructor();
+        Herramienta unHachaDeMadera = constructor.construirHachaDeMadera();
 
         assertEquals(100, unHachaDeMadera.getDurabilidad());
     }
 
     @Test
-    public void testHachaDeMaderaCon2Fuerza{
-        Herramienta unHachaDeMadera = new Hacha(100, 2);
+    public void testHachaDeMaderaCon2Fuerza(){
+        Constructor constructor = new Constructor();
+        Herramienta unHachaDeMadera = constructor.construirHachaDeMadera();
 
-        assertEquals(2, unHachaDeMadera.getFuerza);
+        assertEquals(2, unHachaDeMadera.getFuerza());
     }
 
     @Test
-    public void testHachaDeMetalCon400Durabilidad{
-        Herramienta unHachaDeMetal = new Hacha(400, 10);
+    public void testHachaDeMetalCon400Durabilidad(){
+        Constructor constructor = new Constructor();
+        Herramienta unHachaDeMetal = constructor.construirHachaDeMetal();
 
         assertEquals(400, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
-    public void testHachaDeMetalCon10Fuerza{
-        Herramienta unHachaDeMetal = new Hacha(400, 10);
+    public void testHachaDeMetalCon10Fuerza(){
+        Constructor constructor = new Constructor();
+        Herramienta unHachaDeMetal = constructor.construirHachaDeMetal();
 
         assertEquals(10, unHachaDeMetal.getFuerza());
     }
 
     @Test
-    public void testPicoDeMaderaCon100Durabilidad{
-        Herramienta unPicoDeMadera = new Pico(100, 2);
+    public void testPicoDeMaderaCon100Durabilidad(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoDeMadera = constructor.construirPicoDeMadera();
 
         assertEquals(100, unPicoDeMadera.getDurabilidad());
     }
 
     @Test
-    public void getTestPicoDeMaderaCon2Fuerza{
-        Herramientas unPicoDeMadera = new Pico(100, 2);
+    public void getTestPicoDeMaderaCon2Fuerza(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoDeMadera = constructor.construirPicoDeMadera();
 
-        assertEquals(100, unPicoDeMadera.getFuerza());
+        assertEquals(2, unPicoDeMadera.getFuerza());
     }
 
     @Test
-    public void testPicoaDeMetalCon400Durabilidad{
-        Herramienta unPicoDeMetal = new Pico(400, 10);
+    public void testPicoaDeMetalCon400Durabilidad(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoDeMetal = constructor.construirPicoDeMetal();
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
 
     @Test
-    public void testPicoDeMetalCon10Fuerza{
-        Herramienta unPicoDeMetal = new Pico(400, 12);
+    public void testPicoDeMetalCon10Fuerza(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoDeMetal = constructor.construirPicoDeMetal();
 
         assertEquals(12, unPicoDeMetal.getFuerza());
     }
 
     @Test
-    public void testPicoFinoCon1000Durabilidad{
-        Herramienta unPicoFino = new Pico(1000, 20);
+    public void testPicoFinoCon1000Durabilidad(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoFino = constructor.construirPicoFino();
 
         assertEquals(1000, unPicoFino.getDurabilidad());
     }
 
     @Test
-    public void testPicoFinoCon20Fuerza{
-        Herramienta unPicoFino = new Pico(1000, 20);
+    public void testPicoFinoCon20Fuerza(){
+        Constructor constructor = new Constructor();
+        Herramienta unPicoFino = constructor.construirPicoFino();
 
         assertEquals(20, unPicoFino.getFuerza());
     }

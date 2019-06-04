@@ -2,3 +2,9 @@
 \.idea/
 
 *.iml
+
+out/test/Algocraft/META-INF/
+
+*.class
+
+out/production/Algocraft/META-INF/

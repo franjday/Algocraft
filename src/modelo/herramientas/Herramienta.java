@@ -1,17 +1,18 @@
-package herramientas;
+package modelo.herramientas;
 
-import desgaste.Desgaste;
+import modelo.desgaste.*;
 
 public abstract class Herramienta {
+    protected int durabilidad;
+    protected int fuerza;
     protected Desgaste desgaste;
 
-    public Herramienta(){ }
     public int getDurabilidad(){
-        return desgaste.getDurabilidad();
+        return this.durabilidad;
     }
 
     public int getFuerza(){
-        return desgaste.getFuerza();
+        return this.fuerza;
     }
 
     public abstract Herramienta usar();
