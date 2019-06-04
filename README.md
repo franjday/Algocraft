@@ -6,11 +6,11 @@ TP2 - Algocraft
 
 # Entrega 1 (Jueves 6 de junio)
 ## Tests de Herramientas:
-  - [ ] Se crea hacha de madera con su durabilidad y fuerza correspondiente.
-  - [ ] Se crea pico de madera con su durabilidad y fuerza correspondiente.
-  - [ ] Se crea hacha de metal con su durabilidad y fuerza correspondiente.
-  - [ ] Se crea Pico de metal con su durabilidad y fuerza correspondiente.
-  - [ ] Se crea Pico Fino con su durabilidad y fuerza correspondiente.
+  - [x] Se crea hacha de madera con su durabilidad y fuerza correspondiente.
+  - [x] Se crea pico de madera con su durabilidad y fuerza correspondiente.
+  - [x] Se crea hacha de metal con su durabilidad y fuerza correspondiente.
+  - [x] Se crea Pico de metal con su durabilidad y fuerza correspondiente.
+  - [x] Se crea Pico Fino con su durabilidad y fuerza correspondiente.
   - [ ] Hacha se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Hacha.
   - [ ] Pico se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Pico.
   - [ ] Pico Fino se usa contra Diamante y se reduce su durabilidad correspondiente.
