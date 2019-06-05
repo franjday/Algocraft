@@ -17,7 +17,7 @@ TP2 - Algocraft
   - [ ] Pico Fino se usa contra los demás materiales y no se reduce su durabilidad.
 
 ## Tests de Jugador:
-  - [ ] Correcta creación e inicialización del jugador.
+  - [x] Correcta creación e inicialización del jugador.
 
 ## Tests de Material:
   - [ ] Madera se golpea con un Hacha de Madera y se verifica que se reduce la durabilidad del material.
