@@ -9,7 +9,7 @@ public class Hacha extends Herramienta {
         this.fuerza = fuerza;
         this.desgaste = desgaste;
     }
-    public Herramienta usar(){
-        return this;
+    public UsarHacha(){
+       
     }
 }

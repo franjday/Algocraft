@@ -6,6 +6,7 @@ public abstract class Herramienta {
     protected int durabilidad;
     protected int fuerza;
     protected Desgaste desgaste;
+    protected Identificacion;
 
     public int getDurabilidad(){
         return this.durabilidad;
