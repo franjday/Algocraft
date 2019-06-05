@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PicoTests {
+public class PicoTest {
 
     @Test
     public void testPicoDeMaderaCon100Durabilidad(){
@@ -14,7 +14,7 @@ public class PicoTests {
     }
 
     @Test
-    public void getTestPicoDeMaderaCon2Fuerza(){
+    public void testPicoDeMaderaCon2Fuerza(){
         Constructor constructor = new Constructor();
         Herramienta unPicoDeMadera = constructor.construirPicoDeMadera();
 
