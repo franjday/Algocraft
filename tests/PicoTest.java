@@ -1,4 +1,5 @@
 import modelo.herramientas.*;
+import modelo.materiales.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,7 +9,7 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaCon100Durabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
 
         assertEquals(100, unPicoDeMadera.getDurabilidad());
     }
@@ -16,7 +17,7 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaCon2Fuerza(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
 
         assertEquals(2, unPicoDeMadera.getFuerza());
     }
@@ -24,7 +25,7 @@ public class PicoTest {
     @Test
     public void testPicoaDeMetalCon400Durabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
@@ -32,7 +33,7 @@ public class PicoTest {
     @Test
     public void testPicoDeMetalCon10Fuerza(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
 
         assertEquals(12, unPicoDeMetal.getFuerza());
     }
@@ -40,7 +41,7 @@ public class PicoTest {
     @Test
     public void testPicoFinoCon1000Durabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
+        Pico unPicoFino = unConstructor.construirPicoFino();
 
         assertEquals(1000, unPicoFino.getDurabilidad());
     }
@@ -48,7 +49,7 @@ public class PicoTest {
     @Test
     public void testPicoFinoCon20Fuerza(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
+        Pico unPicoFino = unConstructor.construirPicoFino();
 
         assertEquals(20, unPicoFino.getFuerza());
     }
@@ -56,10 +57,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
-        Material unaMadera = new Madera();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Madera unaMadera = new Madera();
 
-        unPicoDeMadera.golpear(unaMadera);
+        unPicoDeMadera.recolectar(unaMadera);
 
         assertEquals(98, unPicoDeMadera.getDurabilidad());
     }
@@ -67,10 +68,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
-        Material unaPiedra = new Piedra();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Piedra unaPiedra = new Piedra();
 
-        unPicoDeMadera.golpear(unaPiedra);
+        unPicoDeMadera.recolectar(unaPiedra);
 
         assertEquals(98, unPicoDeMadera.getDurabilidad());
     }
@@ -78,10 +79,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
-        Material unMetal = new Metal();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Metal unMetal = new Metal();
 
-        unPicoDeMadera.golpear(unMetal);
+        unPicoDeMadera.recolectar(unMetal);
 
         assertEquals(98, unPicoDeMadera.getDurabilidad());
     }
@@ -89,10 +90,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMaderaGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMadera = unConstructor.construirPicoDeMadera();
-        Material unDiamante = new Diamante();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Diamante unDiamante = new Diamante();
 
-        unPicoDeMadera.golpear(unDiamante);
+        unPicoDeMadera.recolectar(unDiamante);
 
         assertEquals(98, unPicoDeMadera.getDurabilidad());
     }
@@ -100,10 +101,10 @@ public class PicoTest {
     @Test
     public void testPicoDePiedraGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDePiedra = unConstructor.construirPicoDePiedra();
-        Material unaMadera = new Madera();
+        Pico unPicoDePiedra = unConstructor.construirPicoDePiedra();
+        Madera unaMadera = new Madera();
 
-        unPicoDePiedra.golpear(unaMadera);
+        unPicoDePiedra.recolectar(unaMadera);
 
         assertEquals( (200 - (4 / (1.5)) ), unPicoDePiedra.getDurabilidad());
     }
@@ -111,10 +112,10 @@ public class PicoTest {
     @Test
     public void testPicoDePiedraGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDePiedra = unConstructor.construirPicoDePiedra();
-        Material unaPiedra = new Piedra();
+        Pico unPicoDePiedra = unConstructor.construirPicoDePiedra();
+        Piedra unaPiedra = new Piedra();
 
-        unPicoDePiedra.golpear(unaPiedra);
+        unPicoDePiedra.recolectar(unaPiedra);
 
         assertEquals( (200 - (4 / (1.5)) ), unPicoDePiedra.getDurabilidad());
     }
@@ -122,10 +123,10 @@ public class PicoTest {
     @Test
     public void testPicoDePiedraGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDePiedra = unConstructor.construirPicoDePiedra();
-        Material unMetal = new Metal();
+        Pico unPicoDePiedra = unConstructor.construirPicoDePiedra();
+        Metal unMetal = new Metal();
 
-        unPicoDePiedra.golpear(unMetal);
+        unPicoDePiedra.recolectar(unMetal);
 
         assertEquals( (200 - (4 / (1.5)) ), unPicoDePiedra.getDurabilidad());
     }
@@ -133,10 +134,10 @@ public class PicoTest {
     @Test
     public void testPicoDePiedraGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDePiedra = unConstructor.construirPicoDePiedra();
-        Material unDiamante = new Diamante();
+        Pico unPicoDePiedra = unConstructor.construirPicoDePiedra();
+        Diamante unDiamante = new Diamante();
 
-        unPicoDePiedra.golpear(unDiamante);
+        unPicoDePiedra.recolectar(unDiamante);
 
         assertEquals( (200 - (4 / (1.5)) ), unPicoDePiedra.getDurabilidad());
     }
@@ -144,10 +145,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMetalGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
-        Material unaMadera = new Madera();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Madera unaMadera = new Madera();
 
-        unPicoDeMetal.golpear(unaMadera);
+        unPicoDeMetal.recolectar(unaMadera);
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
@@ -155,10 +156,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMetalGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
-        Material unaPiedra = new Piedra();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Piedra unaPiedra = new Piedra();
 
-        unPicoDeMetal.golpear(unaPiedra);
+        unPicoDeMetal.recolectar(unaPiedra);
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
@@ -166,10 +167,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMetalGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
-        Material unMetal = new Metal();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Metal unMetal = new Metal();
 
-        unPicoDeMetal.golpear(unMetal);
+        unPicoDeMetal.recolectar(unMetal);
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
@@ -177,10 +178,10 @@ public class PicoTest {
     @Test
     public void testPicoDeMetalGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoDeMetal = unConstructor.construirPicoDeMetal();
-        Material unDiamante = new Diamante();
+        Pico unPicoDeMetal = unConstructor.construirPicoDeMetal();
+        Diamante unDiamante = new Diamante();
 
-        unPicoDeMetal.golpear(unDiamante);
+        unPicoDeMetal.recolectar(unDiamante);
 
         assertEquals(400, unPicoDeMetal.getDurabilidad());
     }
@@ -188,10 +189,10 @@ public class PicoTest {
     @Test
     public void testPicoFinoGolpeaMaderaNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
-        Material unaMadera = new Madera();
+        Pico unPicoFino = unConstructor.construirPicoFino();
+        Madera unaMadera = new Madera();
 
-        unPicoFino.golpear(unaMadera);
+        unPicoFino.recolectar(unaMadera);
 
         assertEquals(1000, unPicoFino.getDurabilidad());
     }
@@ -199,10 +200,10 @@ public class PicoTest {
     @Test
     public void testPicoFinoGolpeaPiedraNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
-        Material unaPiedra = new Piedra();
+        Pico unPicoFino = unConstructor.construirPicoFino();
+        Piedra unaPiedra = new Piedra();
 
-        unPicoFino.golpear(unaPiedra);
+        unPicoFino.recolectar(unaPiedra);
 
         assertEquals(1000, unPicoFino.getDurabilidad());
     }
@@ -210,10 +211,10 @@ public class PicoTest {
     @Test
     public void testPicoFinoGolpeaMetalNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
-        Material unMetal = new Metal();
+        Pico unPicoFino = unConstructor.construirPicoFino();
+        Metal unMetal = new Metal();
 
-        unPicoFino.golpear(unMetal);
+        unPicoFino.recolectar(unMetal);
 
         assertEquals(1000, unPicoFino.getDurabilidad());
     }
@@ -221,12 +222,12 @@ public class PicoTest {
     @Test
     public void testPicoFinoGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unPicoFino = unConstructor.construirPicoFino();
-        Material unDiamante = new Diamante();
+        Pico unPicoFino = unConstructor.construirPicoFino();
+        Diamante unDiamante = new Diamante();
 
-        unPicoFino.golpear(unDiamante);
+        unPicoFino.recolectar(unDiamante);
 
-        assertEquals( (1000 - (1000 * 0.1)), unPicoFino.getDurabilidad());
+        assertEquals( (int)(1000 - (1000 * 0.1)), unPicoFino.getDurabilidad());
     }
 
 }

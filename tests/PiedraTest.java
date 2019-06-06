@@ -1,15 +1,19 @@
-import modelo.material.*;
+import modelo.materiales.*;
+import modelo.herramientas.*;
+
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class PiedraTest {
 
     @Test
     public void testPiedraGolpeadaConUnHachaDeMaderaNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Material unaPiedra = new Piedra();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Piedra unaPiedra = new Piedra();
 
-        unHachaDeMadera.golpear(unaPiedra);
+        unHachaDeMadera.recolectar(unaPiedra);
 
         assertEquals(30, unaPiedra.getDurabilidad());
     }
@@ -17,10 +21,10 @@ public class PiedraTest {
     @Test
     public void testPiedraGolpeadaConUnHachaDePiedraNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDePiedra = unConstructor.construirHachaDePiedra();
-        Material unaPiedra = new Piedra();
+        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Piedra unaPiedra = new Piedra();
 
-        unHachaDePiedra.golpear(unaPiedra);
+        unHachaDePiedra.recolectar(unaPiedra);
 
         assertEquals(30, unaPiedra.getDurabilidad());
     }
@@ -28,10 +32,10 @@ public class PiedraTest {
     @Test
     public void testPiedraGolpeadaConUnHachaDeMentalNoReduceSuDurabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
-        Material unaPiedra = new Piedra();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Piedra unaPiedra = new Piedra();
 
-        unHachaDeMetal.golpear(unaPiedra);
+        unHachaDeMetal.recolectar(unaPiedra);
 
         assertEquals(30, unaPiedra.getDurabilidad());
     }

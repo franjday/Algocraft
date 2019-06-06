@@ -1,6 +1,8 @@
+package modelo.materiales;
+
 public class Piedra extends Material {
 
     public Piedra() {
-        this.durabilidad = durabilidad;
+        this.durabilidad = 30;
     }
 }

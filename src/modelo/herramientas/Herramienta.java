@@ -1,12 +1,12 @@
 package modelo.herramientas;
 
 import modelo.desgaste.*;
+import modelo.materiales.*;
 
 public abstract class Herramienta {
     protected int durabilidad;
     protected int fuerza;
     protected Desgaste desgaste;
-    protected Identificacion;
 
     public int getDurabilidad(){
         return this.durabilidad;
@@ -15,6 +15,4 @@ public abstract class Herramienta {
     public int getFuerza(){
         return this.fuerza;
     }
-
-    public abstract Herramienta usar();
 }

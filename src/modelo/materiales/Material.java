@@ -2,14 +2,12 @@ package modelo.materiales;
 
 public abstract class Material {
     protected int durabilidad;
-    protected int HerramientaNecesaria;
 
-    public Material(int durabilidad){
-        this.durabilidad = durabilidad;
-        this.HerramientaNecesaria = HerramientaNecesaria;
+    public int getDurabilidad(){
+        return this.durabilidad;
     }
-    public void disminuirDurabilidad (int fuerza, Herramienta herramienta) {
+    public void disminuirDurabilidad (int golpe) {
 
-        durabilidad -= fuerza;
+        durabilidad -= golpe;
     }
 }

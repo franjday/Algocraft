@@ -1,4 +1,5 @@
 import modelo.herramientas.*;
+import modelo.materiales.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,7 +9,7 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaCon100Durabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
 
         assertEquals(100, unHachaDeMadera.getDurabilidad());
     }
@@ -16,7 +17,7 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaCon2Fuerza(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
 
         assertEquals(2, unHachaDeMadera.getFuerza());
     }
@@ -24,7 +25,7 @@ public class HachaTest {
     @Test
     public void testHachaDeMetalCon400Durabilidad(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
 
         assertEquals(400, unHachaDeMetal.getDurabilidad());
     }
@@ -32,7 +33,7 @@ public class HachaTest {
     @Test
     public void testHachaDeMetalCon10Fuerza(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
 
         assertEquals(10, unHachaDeMetal.getFuerza());
     }
@@ -41,10 +42,10 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Material unaMadera = new Madera();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Madera unaMadera = new Madera();
 
-        unHachaDeMadera.golpear(unaMadera);
+        unHachaDeMadera.recolectar(unaMadera);
 
         assertEquals(98, unHachaDeMadera.getDurabilidad());
     }
@@ -52,10 +53,10 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Material unaPiedra = new Piedra();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Piedra unaPiedra = new Piedra();
 
-        unHachaDeMadera.golpear(unaPiedra);
+        unHachaDeMadera.recolectar(unaPiedra);
 
         assertEquals(98, unHachaDeMadera.getDurabilidad());
     }
@@ -63,10 +64,10 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Material unMetal= new Metal();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Metal unMetal= new Metal();
 
-        unHachaDeMadera.golpear(unMetal);
+        unHachaDeMadera.recolectar(unMetal);
 
         assertEquals(98, unHachaDeMadera.getDurabilidad());
     }
@@ -74,90 +75,98 @@ public class HachaTest {
     @Test
     public void testHachaDeMaderaGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Material unDiamante= new Diamante();
+        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Diamante unDiamante= new Diamante();
 
-        unHachaDeMadera.golpear(unDiamante);
+        unHachaDeMadera.recolectar(unDiamante);
 
         assertEquals(98, unHachaDeMadera.getDurabilidad());
     }
 
+    @Test
     public void testHachaDePiedraGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDePiedra = unConstructor.construirHachaDePiedra();
-        Material unaMadera = new Madera();
+        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Madera unaMadera = new Madera();
 
-        unHachaDePiedra.golpear(unaMadera);
+        unHachaDePiedra.recolectar(unaMadera);
 
         assertEquals(195, unHachaDePiedra.getDurabilidad());
     }
 
+    @Test
     public void testHachaDePiedraGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDePiedra = unConstructor.construirHachaDePiedra();
-        Material unaPiedra = new Piedra();
+        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Piedra unaPiedra = new Piedra();
 
-        unHachaDePiedra.golpear(unaPiedra);
+        unHachaDePiedra.recolectar(unaPiedra);
 
         assertEquals(195, unHachaDePiedra.getDurabilidad());
     }
 
+    @Test
     public void testHachaDePiedraGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDePiedra = unConstructor.construirHachaDePiedra();
-        Material unMetal= new Metal();
+        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Metal unMetal= new Metal();
 
-        unHachaDePiedra.golpear(unMetal);
+        unHachaDePiedra.recolectar(unMetal);
 
         assertEquals(195, unHachaDePiedra.getDurabilidad());
     }
 
+    @Test
     public void testHachaDePiedraGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDePiedra = unConstructor.construirHachaDePiedra();
-        Material unDiamante = new Diamante();
+        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Diamante unDiamante = new Diamante();
 
-        unHachaDePiedra.golpear(unDiamante);
+        unHachaDePiedra.recolectar(unDiamante);
 
         assertEquals(195, unHachaDePiedra.getDurabilidad());
     }
 
+    @Test
     public void testHachaDeMetalGolpeaMadera(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
-        Material unaMadera = new Madera();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Madera unaMadera = new Madera();
 
-        unHachaDeMetal.golpear(unaMadera);
+        unHachaDeMetal.recolectar(unaMadera);
 
         assertEquals(390, unHachaDeMetal.getDurabilidad());
     }
 
+    @Test
     public void testHachaDeMetalGolpeaPiedra(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
-        Material unaPiedra= new Piedra();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Piedra unaPiedra= new Piedra();
 
-        unHachaDeMetal.golpear(unaPiedra);
+        unHachaDeMetal.recolectar(unaPiedra);
 
         assertEquals(390, unHachaDeMetal.getDurabilidad());
     }
 
+    @Test
     public void testHachaDeMetalGolpeaMetal(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
-        Material unMetal= new Metal();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Metal unMetal= new Metal();
 
-        unHachaDeMetal.golpear(unMetal);
+        unHachaDeMetal.recolectar(unMetal);
 
         assertEquals(390, unHachaDeMetal.getDurabilidad());
     }
 
+    @Test
     public void testHachaDeMetalGolpeaDiamante(){
         Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMetal = unConstructor.construirHachaDeMetal();
-        Material unDiamante = new Diamante();
+        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Diamante unDiamante = new Diamante();
 
-        unHachaDeMetal.golpear(unDiamante);
+        unHachaDeMetal.recolectar(unDiamante);
 
         assertEquals(390, unHachaDeMetal.getDurabilidad());
     }

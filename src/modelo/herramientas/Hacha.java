@@ -1,5 +1,6 @@
 package modelo.herramientas;
 
+import modelo.materiales.*;
 import modelo.desgaste.*;
 
 public class Hacha extends Herramienta {
@@ -10,21 +11,21 @@ public class Hacha extends Herramienta {
         this.desgaste = desgaste;
     }
 
-    public void golpear(Madera unaMadera){
-        this.durabilidad = this.desgastar(this.durabilidad);
+    public void recolectar(Madera unaMadera){
+        this.durabilidad = (int)this.desgaste.desgastar(this.durabilidad);
         unaMadera.disminuirDurabilidad(this.fuerza);
     }
 
-    public void golpear(Piedra unaPiedra){
-        this.durabilidad = this.desgastar(this.durabilidad);
+    public void recolectar(Piedra unaPiedra){
+        this.durabilidad = (int)this.desgaste.desgastar(this.durabilidad);
     }
 
-    public void golpear(Metal unMetal){
-        this.durabilidad = this.desgastar(this.durabilidad);
+    public void recolectar(Metal unMetal){
+        this.durabilidad = (int)this.desgaste.desgastar(this.durabilidad);
     }
 
-    public void golpear(Diamante unDiamante){
-        this.durabilidad = this.desgastar(this.durabilidad);
+    public void recolectar(Diamante unDiamante){
+        this.durabilidad = (int)this.desgaste.desgastar(this.durabilidad);
     }
 
 }
