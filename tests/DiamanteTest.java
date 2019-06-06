@@ -87,9 +87,9 @@ public class DiamanteTest {
     }
 
     @Test
-    public void testDiamanteGolpeadaConUnPicoFino(){
+    public void testDiamanteGolpeadaConUnPicoFino() {
         Constructor unConstructor = new Constructor();
-        Pico unPicoFino= unConstructor.construirPicoFino();
+        Pico unPicoFino = unConstructor.construirPicoFino();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -99,3 +99,5 @@ public class DiamanteTest {
 
         assertEquals(durabilidadDiamante - fuerzaPico, unDiamante.getDurabilidad());
     }
+
+}
