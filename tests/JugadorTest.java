@@ -6,10 +6,9 @@ public class JugadorTest {
 
     @Test
     public void testJugadorCreadoPoseeHachaDeMadera(){
-        Constructor unConstructor = new Constructor();
-        Herramienta unHachaDeMadera = unConstructor.construirHachaDeMadera();
-        Jugador unJugador = new Jugador(unHachaDeMadera);
+        Jugador unJugador = new Jugador();
+        Herramienta hachaDeJugador = unJugador.getHerramientaEquipada();
 
-        assert(unHachaDeMadera == unJugador.getHerramientaEquipada());
+        assert(hachaDeJugador instanceof Herramienta);
     }
 }

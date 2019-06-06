@@ -7,8 +7,9 @@ public class Jugador {
     private Herramienta herramientaEquipada;
     private ArrayList inventario;
 
-    public Jugador(Herramienta herramientaInicial){
-        herramientaEquipada = herramientaInicial;
+    public Jugador(){
+        Constructor unConstructor = new Constructor();
+        herramientaEquipada = unConstructor.construirHachaDeMadera();
     }
 
     public Herramienta getHerramientaEquipada() {
