@@ -53,7 +53,7 @@ public class PicoTest {
 
         assertEquals(20, unPicoFino.getFuerza());
     }
-
+/*
     @Test
     public void testPicoDeMaderaGolpeaMadera(){
         Constructor unConstructor = new Constructor();
@@ -229,5 +229,5 @@ public class PicoTest {
 
         assertEquals( (int)(1000 - (1000 * 0.1)), unPicoFino.getDurabilidad());
     }
-
+*/
 }

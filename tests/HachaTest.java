@@ -135,7 +135,7 @@ public class HachaTest {
 
         unHachaDeMetal.recolectar(unaMadera);
 
-        assertEquals(390, unHachaDeMetal.getDurabilidad());
+        assertEquals(395, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
@@ -146,7 +146,7 @@ public class HachaTest {
 
         unHachaDeMetal.recolectar(unaPiedra);
 
-        assertEquals(390, unHachaDeMetal.getDurabilidad());
+        assertEquals(395, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
@@ -157,7 +157,7 @@ public class HachaTest {
 
         unHachaDeMetal.recolectar(unMetal);
 
-        assertEquals(390, unHachaDeMetal.getDurabilidad());
+        assertEquals(395, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
@@ -168,7 +168,7 @@ public class HachaTest {
 
         unHachaDeMetal.recolectar(unDiamante);
 
-        assertEquals(390, unHachaDeMetal.getDurabilidad());
+        assertEquals(395, unHachaDeMetal.getDurabilidad());
     }
 
 }

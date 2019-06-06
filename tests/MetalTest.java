@@ -1,4 +1,4 @@
-import modelo.materiales.*;
+/*import modelo.materiales.*;
 import modelo.herramientas.*;
 
 import org.junit.Test;
@@ -18,4 +18,4 @@ public class MetalTest {
 
         assertEquals(50, unMetal.getDurabilidad());
     }
-}
+}*/
