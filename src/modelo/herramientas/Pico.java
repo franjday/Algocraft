@@ -2,15 +2,17 @@ package modelo.herramientas;
 
 import modelo.desgaste.*;
 
-public class Pico extends Herramienta{
+public abstract class Pico implements Herramienta{
 
-    public Pico(int durabilidad, int fuerza, Desgaste desgaste){
-        this.durabilidad = durabilidad;
-        this.fuerza = fuerza;
-        this.desgaste = desgaste;
+    protected int durabilidad;
+    protected int fuerza;
+    protected Desgaste desgaste;
+
+    public int getDurabilidad(){
+        return this.durabilidad;
     }
 
-    public Herramienta usar(){
-        return this;
+    public int getFuerza(){
+        return this.fuerza;
     }
 }

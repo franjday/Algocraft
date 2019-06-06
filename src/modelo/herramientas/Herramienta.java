@@ -1,18 +1,17 @@
 package modelo.herramientas;
 
-import modelo.desgaste.*;
 import modelo.materiales.*;
 
-public abstract class Herramienta {
-    protected int durabilidad;
-    protected int fuerza;
-    protected Desgaste desgaste;
+public interface Herramienta {
+    int getDurabilidad();
 
-    public int getDurabilidad(){
-        return this.durabilidad;
-    }
+    int getFuerza();
 
-    public int getFuerza(){
-        return this.fuerza;
-    }
+    void recolectar(Madera unaMadera);
+
+    void recolectar(Piedra unaPiedra);
+
+    void recolectar(Metal unMetal);
+
+    void recolectar(Diamante unDiamante);
 }

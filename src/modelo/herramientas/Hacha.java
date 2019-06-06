@@ -3,12 +3,24 @@ package modelo.herramientas;
 import modelo.materiales.*;
 import modelo.desgaste.*;
 
-public class Hacha extends Herramienta {
+public class Hacha implements Herramienta {
+
+    private int durabilidad;
+    private int fuerza;
+    private Desgaste desgaste;
 
     public Hacha(int durabilidad, int fuerza, Desgaste desgaste) {
         this.durabilidad = durabilidad;
         this.fuerza = fuerza;
         this.desgaste = desgaste;
+    }
+
+    public int getDurabilidad(){
+        return this.durabilidad;
+    }
+
+    public int getFuerza(){
+        return this.fuerza;
     }
 
     public void recolectar(Madera unaMadera){

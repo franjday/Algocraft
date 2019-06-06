@@ -13,9 +13,11 @@ public class PiedraTest {
         Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
         Piedra unaPiedra = new Piedra();
 
+        int durabilidadPiedra = unaPiedra.getDurabilidad();
+
         unHachaDeMadera.recolectar(unaPiedra);
 
-        assertEquals(30, unaPiedra.getDurabilidad());
+        assertEquals(durabilidadPiedra, unaPiedra.getDurabilidad());
     }
 
     @Test
@@ -24,9 +26,11 @@ public class PiedraTest {
         Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
         Piedra unaPiedra = new Piedra();
 
+        int durabilidadPiedra = unaPiedra.getDurabilidad();
+
         unHachaDePiedra.recolectar(unaPiedra);
 
-        assertEquals(30, unaPiedra.getDurabilidad());
+        assertEquals(durabilidadPiedra, unaPiedra.getDurabilidad());
     }
 
     @Test
@@ -35,8 +39,25 @@ public class PiedraTest {
         Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
         Piedra unaPiedra = new Piedra();
 
+        int durabilidadPiedra = unaPiedra.getDurabilidad();
+
         unHachaDeMetal.recolectar(unaPiedra);
 
-        assertEquals(30, unaPiedra.getDurabilidad());
+        assertEquals(durabilidadPiedra, unaPiedra.getDurabilidad());
     }
+
+    @Test
+    public void testPiedraGolpeadaConPicoDeMaderaReduceSuDurabilidad(){
+        Constructor unConstructor = new Constructor();
+        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Piedra unaPiedra = new Piedra();
+
+        int durabilidadPiedra = unaPiedra.getDurabilidad();
+        int fuerzaPico = unPicoDeMadera.getFuerza();
+
+        unPicoDeMadera.recolectar(unaPiedra);
+
+        assertEquals(durabilidadPiedra - fuerzaPico, unaPiedra.getDurabilidad());
+    }
+
 }
