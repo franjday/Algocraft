@@ -2,16 +2,16 @@ package modelo.herramientas;
 
 import modelo.materiales.*;
 
-public interface Herramienta {
-    int getDurabilidad();
+public abstract class Herramienta {
+    public abstract int getDurabilidad();
 
-    int getFuerza();
+    public abstract int getFuerza();
 
-    void recolectar(Madera unaMadera);
+    public abstract void recolectar(Madera unaMadera);
 
-    void recolectar(Piedra unaPiedra);
+    public abstract void recolectar(Piedra unaPiedra);
 
-    void recolectar(Metal unMetal);
+    public abstract void recolectar(Metal unMetal);
 
-    void recolectar(Diamante unDiamante);
+    public abstract void recolectar(Diamante unDiamante);
 }

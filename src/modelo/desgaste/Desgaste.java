@@ -1,5 +1,5 @@
 package modelo.desgaste;
 
-public abstract class Desgaste {
-    public abstract double desgastar(int durabilidad);
+public interface Desgaste {
+    double desgastar(int durabilidad);
 }

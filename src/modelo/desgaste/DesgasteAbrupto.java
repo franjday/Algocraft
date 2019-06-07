@@ -1,6 +1,6 @@
 package modelo.desgaste;
 
-public class DesgasteAbrupto extends Desgaste{
+public class DesgasteAbrupto implements Desgaste{
     private int usosRestantes;
 
     public DesgasteAbrupto(){

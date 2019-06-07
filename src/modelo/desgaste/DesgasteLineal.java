@@ -1,6 +1,6 @@
 package modelo.desgaste;
 
-public class DesgasteLineal extends Desgaste{
+public class DesgasteLineal implements Desgaste{
     protected double coeficienteDesgaste;
 
     public DesgasteLineal(double coeficienteDesgaste){

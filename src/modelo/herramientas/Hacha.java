@@ -3,7 +3,7 @@ package modelo.herramientas;
 import modelo.materiales.*;
 import modelo.desgaste.*;
 
-public class Hacha implements Herramienta {
+public class Hacha extends Herramienta {
 
     private int durabilidad;
     private int fuerza;

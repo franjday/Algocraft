@@ -1,6 +1,6 @@
 package modelo.desgaste;
 
-public class DesgasteFino extends Desgaste {
+public class DesgasteFino implements Desgaste {
 
     @Override
     public double desgastar(int durabilidadActual){

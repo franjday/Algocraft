@@ -2,7 +2,7 @@ package modelo.herramientas;
 
 import modelo.desgaste.*;
 
-public abstract class Pico implements Herramienta{
+public abstract class Pico extends Herramienta{
 
     protected int durabilidad;
     protected int fuerza;
