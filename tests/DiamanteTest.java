@@ -84,7 +84,7 @@ public class DiamanteTest {
 
         unPicoDeMetal.recolectar(unDiamante);
 
-        assertEquals(durabilidadDiamante - fuerzaPico, unDiamante.getDurabilidad());
+        assertEquals(durabilidadDiamante , unDiamante.getDurabilidad());
     }
 
     @Test
