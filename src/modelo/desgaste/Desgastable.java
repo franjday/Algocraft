@@ -1,5 +1,5 @@
 package modelo.desgaste;
 
-public interface Desgaste {
+public interface Desgastable {
     double desgastar(int durabilidad);
 }

@@ -1,9 +1,9 @@
 package modelo.desgaste;
 
-public class DesgasteLineal implements Desgaste{
+public class DesgastableLineal implements Desgastable {
     protected double coeficienteDesgaste;
 
-    public DesgasteLineal(double coeficienteDesgaste){
+    public DesgastableLineal(double coeficienteDesgaste){
         this.coeficienteDesgaste = coeficienteDesgaste;
     }
 

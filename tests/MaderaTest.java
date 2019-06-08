@@ -1,3 +1,4 @@
+import modelo.construccion.*;
 import modelo.materiales.*;
 import modelo.herramientas.*;
 
@@ -9,8 +10,8 @@ public class MaderaTest {
 
     @Test
     public void testMaderaGolpeadaConUnHachaDeMadera(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadMadera = unaMadera.getDurabilidad();
@@ -23,8 +24,8 @@ public class MaderaTest {
 
     @Test
     public void testMaderaGolpeadaConHachaDePiedra(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadMadera = unaMadera.getDurabilidad();
@@ -37,8 +38,8 @@ public class MaderaTest {
 
     @Test
     public void testMaderaGolpeadaConHachaDeMetal(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadMadera = unaMadera.getDurabilidad();

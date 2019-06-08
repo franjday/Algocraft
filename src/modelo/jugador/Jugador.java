@@ -1,6 +1,9 @@
 package modelo.jugador;
 
 import java.util.*;
+
+import modelo.construccion.Constructor;
+import modelo.construccion.HachaMaderaConstructor;
 import modelo.herramientas.*;
 import modelo.materiales.*;
 
@@ -10,8 +13,8 @@ public class Jugador {
     private ArrayList inventarioHerramientas;
 
     public Jugador(){
-        Constructor unConstructor = new Constructor();
-        herramientaEquipada = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        herramientaEquipada = unConstructor.construir();
         inventarioHerramientas = new ArrayList<Herramienta>();
         inventarioMateriales = new ArrayList<Material>();
     }

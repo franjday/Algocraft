@@ -1,32 +1,32 @@
 package modelo.herramientas;
 
-import modelo.desgaste.DesgasteAbrupto;
+import modelo.desgaste.Desgastable;
 import modelo.materiales.*;
 
 public class PicoDeMetal extends Pico{
 
-    public PicoDeMetal(){
-        this.durabilidad = 400;
-        this.fuerza = 12;
-        this.desgaste = new DesgasteAbrupto();
+    public PicoDeMetal(int durabilidad, int fuerza, Desgastable desgastable) {
+        this.durabilidad = durabilidad;
+        this.fuerza = fuerza;
+        this.desgastable = desgastable;
     }
 
     public void recolectar(Madera unaMadera){
-        this.durabilidad = (int) this.desgaste.desgastar(this.durabilidad);
+        this.durabilidad = (int) this.desgastable.desgastar(this.durabilidad);
     }
 
     public void recolectar(Piedra unaPiedra){
-        this.durabilidad = (int) this.desgaste.desgastar(this.durabilidad);
+        this.durabilidad = (int) this.desgastable.desgastar(this.durabilidad);
         unaPiedra.disminuirDurabilidad(this.fuerza);
     }
 
     public void recolectar(Metal unMetal){
-        this.durabilidad = (int) this.desgaste.desgastar(this.durabilidad);
+        this.durabilidad = (int) this.desgastable.desgastar(this.durabilidad);
         unMetal.disminuirDurabilidad(this.fuerza);
     }
 
     public void recolectar(Diamante unDiamante){
-        this.durabilidad = (int) this.desgaste.desgastar(this.durabilidad);
+        this.durabilidad = (int) this.desgastable.desgastar(this.durabilidad);
         unDiamante.disminuirDurabilidad(this.fuerza);
     }
 

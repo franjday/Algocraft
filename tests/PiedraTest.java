@@ -1,3 +1,5 @@
+import modelo.construccion.*;
+import modelo.construccion.HachaMaderaConstructor;
 import modelo.materiales.*;
 import modelo.herramientas.*;
 
@@ -9,8 +11,8 @@ public class PiedraTest {
 
     @Test
     public void testPiedraGolpeadaConUnHachaDeMaderaNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadPiedra = unaPiedra.getDurabilidad();
@@ -22,8 +24,8 @@ public class PiedraTest {
 
     @Test
     public void testPiedraGolpeadaConUnHachaDePiedraNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadPiedra = unaPiedra.getDurabilidad();
@@ -35,8 +37,8 @@ public class PiedraTest {
 
     @Test
     public void testPiedraGolpeadaConUnHachaDeMentalNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadPiedra = unaPiedra.getDurabilidad();
@@ -48,8 +50,8 @@ public class PiedraTest {
 
     @Test
     public void testPiedraGolpeadaConPicoDeMaderaReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Constructor unConstructor = new PicoMaderaConstructor();
+        Pico unPicoDeMadera = (Pico)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadPiedra = unaPiedra.getDurabilidad();
