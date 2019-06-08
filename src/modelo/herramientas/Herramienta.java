@@ -1,11 +1,21 @@
 package modelo.herramientas;
 
+import modelo.desgaste.Desgastable;
 import modelo.materiales.*;
 
 public abstract class Herramienta {
-    public abstract int getDurabilidad();
 
-    public abstract int getFuerza();
+    protected int durabilidad;
+    protected int fuerza;
+    protected Desgastable desgastable;
+
+    public int getDurabilidad(){
+        return this.durabilidad;
+    }
+
+    public int getFuerza(){
+        return this.fuerza;
+    }
 
     public abstract void recolectar(Madera unaMadera);
 

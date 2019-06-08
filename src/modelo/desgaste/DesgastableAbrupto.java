@@ -1,9 +1,11 @@
 package modelo.desgaste;
 
-public class DesgasteAbrupto implements Desgaste{
+public class DesgastableAbrupto implements Desgastable {
+
+
     private int usosRestantes;
 
-    public DesgasteAbrupto(){
+    public DesgastableAbrupto(){
         this.usosRestantes = 10;
     }
 

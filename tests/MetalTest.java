@@ -1,3 +1,4 @@
+import modelo.construccion.*;
 import modelo.materiales.*;
 import modelo.herramientas.*;
 
@@ -8,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class MetalTest {
     @Test
     public void testMetalGolpeadaConUnHachaDeMaderaNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Metal unMetal = new Metal();
 
         int durabilidadMetal = unMetal.getDurabilidad();
@@ -21,8 +22,8 @@ public class MetalTest {
 
     @Test
     public void testMetalGolpeadaConUnHachaDePiedraNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Metal unMetal = new Metal();
 
         int durabilidadMetal = unMetal.getDurabilidad();
@@ -33,9 +34,9 @@ public class MetalTest {
     }
 
     @Test
-    public void testMetalGolpeadaConUnHachaDeMentalNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+    public void testMetalGolpeadaConUnHachaDeMetalNoReduceSuDurabilidad(){
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Metal unMetal = new Metal();
 
         int durabilidadMetal = unMetal.getDurabilidad();
@@ -47,8 +48,8 @@ public class MetalTest {
     
     @Test
     public void testMetalGolpeadoConPicoDeMaderaNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Constructor unConstructor = new PicoMaderaConstructor();
+        Pico unPicoDeMadera = (Pico)unConstructor.construir();
         Metal unMetal = new Metal();
 
         int durabilidadMetal = unMetal.getDurabilidad();

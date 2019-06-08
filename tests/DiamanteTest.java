@@ -1,3 +1,4 @@
+import modelo.construccion.*;
 import modelo.materiales.*;
 import modelo.herramientas.*;
 
@@ -9,8 +10,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnHachaDeMaderaNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -22,8 +23,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnHachaDePiedraNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -35,8 +36,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnHachaDeMetalNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -48,8 +49,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnPicoDeMaderaNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Pico unPicoDeMadera = unConstructor.construirPicoDeMadera();
+        Constructor unConstructor = new PicoMaderaConstructor();
+        Pico unPicoDeMadera = (Pico)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -61,8 +62,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnPicoDePiedraNoReduceSuDurabilidad(){
-        Constructor unConstructor = new Constructor();
-        Pico unPicoDePiedra = unConstructor.construirPicoDePiedra();
+        Constructor unConstructor = new PicoPiedraConstructor();
+        Pico unPicoDePiedra = (Pico)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -74,8 +75,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnPicoDeMetal(){
-        Constructor unConstructor = new Constructor();
-        Pico unPicoDeMetal= unConstructor.construirPicoDeMetal();
+        Constructor unConstructor = new PicoMetalConstructor();
+        Pico unPicoDeMetal= (Pico)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();
@@ -88,8 +89,8 @@ public class DiamanteTest {
 
     @Test
     public void testDiamanteGolpeadaConUnPicoFino() {
-        Constructor unConstructor = new Constructor();
-        Pico unPicoFino = unConstructor.construirPicoFino();
+        Constructor unConstructor = new PicoFinoConstructor();
+        Pico unPicoFino = (Pico)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadDiamante = unDiamante.getDurabilidad();

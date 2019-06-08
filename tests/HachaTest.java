@@ -1,3 +1,4 @@
+import modelo.construccion.*;
 import modelo.herramientas.*;
 import modelo.materiales.*;
 import org.junit.Test;
@@ -8,32 +9,32 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMaderaCon100Durabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
 
         assertEquals(100, unHachaDeMadera.getDurabilidad());
     }
 
     @Test
     public void testHachaDeMaderaCon2Fuerza(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
 
         assertEquals(2, unHachaDeMadera.getFuerza());
     }
 
     @Test
     public void testHachaDeMetalCon400Durabilidad(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
 
         assertEquals(400, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
     public void testHachaDeMetalCon10Fuerza(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
 
         assertEquals(10, unHachaDeMetal.getFuerza());
     }
@@ -41,8 +42,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMaderaGolpeaMadera(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadHacha = unHachaDeMadera.getDurabilidad();
@@ -55,8 +56,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMaderaGolpeaPiedra(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadHacha = unHachaDeMadera.getDurabilidad();
@@ -69,8 +70,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMaderaGolpeaMetal(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Metal unMetal= new Metal();
 
         int durabilidadHacha = unHachaDeMadera.getDurabilidad();
@@ -83,8 +84,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMaderaGolpeaDiamante(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMadera = unConstructor.construirHachaDeMadera();
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
         Diamante unDiamante= new Diamante();
 
         int durabilidadHacha = unHachaDeMadera.getDurabilidad();
@@ -97,8 +98,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraGolpeaMadera(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadHacha = unHachaDePiedra.getDurabilidad();
@@ -111,8 +112,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraGolpeaPiedra(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Piedra unaPiedra = new Piedra();
 
         int durabilidadHacha = unHachaDePiedra.getDurabilidad();
@@ -125,8 +126,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraGolpeaMetal(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Metal unMetal= new Metal();
 
         int durabilidadHacha = unHachaDePiedra.getDurabilidad();
@@ -139,8 +140,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraGolpeaDiamante(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDePiedra = unConstructor.construirHachaDePiedra();
+        Constructor unConstructor = new HachaPiedraConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadHacha = unHachaDePiedra.getDurabilidad();
@@ -153,8 +154,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMetalGolpeaMadera(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Madera unaMadera = new Madera();
 
         int durabilidadHacha = unHachaDeMetal.getDurabilidad();
@@ -167,8 +168,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMetalGolpeaPiedra(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Piedra unaPiedra= new Piedra();
 
         int durabilidadHacha = unHachaDeMetal.getDurabilidad();
@@ -181,8 +182,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMetalGolpeaMetal(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Metal unMetal= new Metal();
 
         int durabilidadHacha = unHachaDeMetal.getDurabilidad();
@@ -195,8 +196,8 @@ public class HachaTest {
 
     @Test
     public void testHachaDeMetalGolpeaDiamante(){
-        Constructor unConstructor = new Constructor();
-        Hacha unHachaDeMetal = unConstructor.construirHachaDeMetal();
+        Constructor unConstructor = new HachaMetalConstructor();
+        Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
         Diamante unDiamante = new Diamante();
 
         int durabilidadHacha = unHachaDeMetal.getDurabilidad();
