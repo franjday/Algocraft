@@ -5,6 +5,7 @@ import modelo.construccion.*;
 import modelo.herramientas.*;
 import modelo.materiales.*;
 import modelo.jugador.Inventario.*;
+import modelo.tablero.*;
 
 public class Jugador implements Contenible {
     private Herramienta herramientaEquipada;
