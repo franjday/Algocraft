@@ -1,6 +1,8 @@
 package modelo.materiales;
 
-public abstract class Material {
+import modelo.tablero.*;
+
+public abstract class Material implements Contenible {
     protected int durabilidad;
 
     public int getDurabilidad(){

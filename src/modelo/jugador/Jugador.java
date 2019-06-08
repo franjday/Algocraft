@@ -1,14 +1,12 @@
 package modelo.jugador;
 
 import java.util.*;
-
-import modelo.construccion.Constructor;
-import modelo.construccion.HachaMaderaConstructor;
+import modelo.construccion.*;
 import modelo.herramientas.*;
 import modelo.materiales.*;
 import modelo.jugador.Inventario.*;
 
-public class Jugador {
+public class Jugador implements Contenible {
     private Herramienta herramientaEquipada;
     private Inventario inventario;
 
