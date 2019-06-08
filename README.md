@@ -29,7 +29,7 @@ TP2 - Algocraft
 # Entrega 2 (Jueves 13 de Junio)
 ## Construcción de herramienta:
 
-Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
+ - [ ] Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
 ## Jugador:
 
  - [ ] Se verifica la correcta inicialización del jugador en el mapa.
