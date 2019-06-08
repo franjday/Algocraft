@@ -4,7 +4,7 @@ TP2 - Algocraft
 [![Build Status](https://travis-ci.org/franjday/Algocraft.svg?branch=master)](https://travis-ci.org/franjday/Algocraft)
 [![codecov](https://codecov.io/gh/franjday/Algocraft/branch/master/graph/badge.svg)](https://codecov.io/gh/franjday/Algocraft)
 
-# Entrega 1 (Jueves 6 de junio)
+# Entrega 1 (Jueves 6 de Junio)
 ## Tests de Herramientas:
   - [x] Se crea hacha de madera con su durabilidad y fuerza correspondiente.
   - [x] Se crea pico de madera con su durabilidad y fuerza correspondiente.
@@ -26,16 +26,16 @@ TP2 - Algocraft
   - [x] Metal se golpea con un Pico de madera y se verifica que no se reduce la durabilidad del material.
   
  
-# Entrega 2(jueves 13 de junio)
+# Entrega 2 (Jueves 13 de Junio)
 ## Construcción de herramienta:
 Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
 #Jugador:
- - [] Se verifica la correcta inicialización del jugador en el mapa.
- - [] Se verifica que puede moverse para todas las direcciones vacías.
+ - [ ] Se verifica la correcta inicialización del jugador en el mapa.
+ - [ ] Se verifica que puede moverse para todas las direcciones vacías.
 #Mapa:
- - [] Se verifica que se puede ocupar un casillero vacío del terreno.
- - [] Se verifica que no se puede ocupar un casillero ocupado.
- - [] Se verifica que un casillero puede ser ocupado por un material o personaje.
+ - [ ] Se verifica que se puede ocupar un casillero vacío del terreno.
+ - [ ] Se verifica que no se puede ocupar un casillero ocupado.
+ - [ ] Se verifica que un casillero puede ser ocupado por un material o personaje.
 #Juego:
- - [] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
+ - [ ] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
 
