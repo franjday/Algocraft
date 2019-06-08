@@ -24,3 +24,18 @@ TP2 - Algocraft
   - [x] Madera se golpea con un Hacha de Madera y se verifica que se reduce la durabilidad del material.
   - [x] Piedra se golpea con un Hacha y se verifica que no se reduce la durabilidad del material.
   - [x] Metal se golpea con un Pico de madera y se verifica que no se reduce la durabilidad del material.
+  
+ 
+# Entrega 2(jueves 13 de junio)
+## Construcción de herramienta:
+Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
+#Jugador:
+ - [x] Se verifica la correcta inicialización del jugador en el mapa.
+ - [x] Se verifica que puede moverse para todas las direcciones vacías.
+#Mapa:
+ - [x] Se verifica que se puede ocupar un casillero vacío del terreno.
+ - [x] Se verifica que no se puede ocupar un casillero ocupado.
+ - [x] Se verifica que un casillero puede ser ocupado por un material o personaje.
+#Juego:
+ - [x] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
+
