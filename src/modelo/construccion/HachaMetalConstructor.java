@@ -14,6 +14,4 @@ public class HachaMetalConstructor extends Constructor{
         return new Hacha(durabilidad,fuerza,lineal);
     }
 
-    public void chequearPatron(){
-    }
 }

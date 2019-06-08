@@ -14,7 +14,4 @@ public class PicoPiedraConstructor extends Constructor {
         return new PicoDePiedra(durabilidad,fuerza,lineal);
     }
 
-    public void chequearPatron(){
-    }
-
 }

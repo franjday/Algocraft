@@ -4,6 +4,7 @@ import modelo.desgaste.*;
 import modelo.herramientas.*;
 
 public class HachaPiedraConstructor extends Constructor{
+
     private int durabilidad = 200;
     private int fuerza = 5;
     private int coeficiente = fuerza;
@@ -13,6 +14,4 @@ public class HachaPiedraConstructor extends Constructor{
         return new Hacha(durabilidad,fuerza,lineal);
     }
 
-    public void chequearPatron(){
-    }
 }

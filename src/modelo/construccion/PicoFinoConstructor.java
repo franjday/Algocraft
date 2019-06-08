@@ -13,7 +13,4 @@ public class PicoFinoConstructor extends Constructor{
         return new PicoFino(durabilidad,fuerza,fino);
     }
 
-    public void chequearPatron(){
-    }
-
 }

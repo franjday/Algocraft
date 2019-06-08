@@ -6,7 +6,4 @@ public abstract class Constructor {
 
     public abstract Herramienta construir();
 
-    public abstract void chequearPatron();
-
-
 }
