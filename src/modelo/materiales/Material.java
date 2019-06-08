@@ -6,8 +6,12 @@ public abstract class Material {
     public int getDurabilidad(){
         return this.durabilidad;
     }
-    public void disminuirDurabilidad (int golpe) {
 
+    public void disminuirDurabilidad (int golpe) {
         durabilidad -= golpe;
+    }
+
+    public boolean SePuedeRecolectar(){
+        return (durabilidad == 0);
     }
 }

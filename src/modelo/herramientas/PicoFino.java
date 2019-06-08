@@ -3,7 +3,8 @@ package modelo.herramientas;
 import modelo.desgaste.Desgastable;
 import modelo.materiales.*;
 
-public class PicoFino extends Pico {
+public class
+PicoFino extends Pico {
 
     public PicoFino(int durabilidad, int fuerza, Desgastable desgastable) {
         this.durabilidad = durabilidad;

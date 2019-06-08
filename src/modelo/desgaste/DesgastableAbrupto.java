@@ -11,6 +11,9 @@ public class DesgastableAbrupto implements Desgastable {
 
     @Override
     public double desgastar(int durabilidad) {
+        if(usosRestantes == 0){
+            return 0;
+        }
         usosRestantes--;
         return durabilidad;
     }

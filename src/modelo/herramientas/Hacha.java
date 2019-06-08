@@ -28,4 +28,5 @@ public class Hacha extends Herramienta {
         this.durabilidad = (int)this.desgastable.desgastar(this.durabilidad);
     }
 
+
 }

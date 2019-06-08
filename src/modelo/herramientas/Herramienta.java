@@ -17,6 +17,10 @@ public abstract class Herramienta {
         return this.fuerza;
     }
 
+    public boolean estaRota(){
+        return (this.durabilidad == 0);
+    }
+
     public abstract void recolectar(Madera unaMadera);
 
     public abstract void recolectar(Piedra unaPiedra);

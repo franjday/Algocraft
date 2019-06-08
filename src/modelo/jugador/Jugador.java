@@ -6,17 +6,17 @@ import modelo.construccion.Constructor;
 import modelo.construccion.HachaMaderaConstructor;
 import modelo.herramientas.*;
 import modelo.materiales.*;
+import modelo.jugador.Inventario.*;
 
 public class Jugador {
     private Herramienta herramientaEquipada;
-    private ArrayList inventarioMateriales;
-    private ArrayList inventarioHerramientas;
+    private Inventario inventario;
+
 
     public Jugador(){
         Constructor unConstructor = new HachaMaderaConstructor();
         herramientaEquipada = unConstructor.construir();
-        inventarioHerramientas = new ArrayList<Herramienta>();
-        inventarioMateriales = new ArrayList<Material>();
+        inventario = new Inventario();
     }
 
     public Herramienta getHerramientaEquipada() {
@@ -24,10 +24,21 @@ public class Jugador {
     }
 
     public ArrayList getInventarioMateriales(){
-        return inventarioMateriales;
+        return inventario.getMateriales();
     }
 
-    public ArrayList getInventarioHerramientas(){
-        return inventarioHerramientas;
+    public ArrayList getInventarioHerramientas(){ return inventario.getHerramientas(); }
+
+    public void recolectar(Diamante Diamante){
+        herramientaEquipada.recolectar(Diamante);
+        if(herramientaEquipada.estaRota()){
+            inventario.EliminarHerramienta();
+        }
+        if(Diamante.SePuedeRecolectar()){
+            inventario.RecolectarMaterial();
+        }
+
     }
+
+
 }

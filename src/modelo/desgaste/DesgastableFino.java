@@ -4,6 +4,9 @@ public class DesgastableFino implements Desgastable {
 
     @Override
     public double desgastar(int durabilidadActual){
-        return durabilidadActual - durabilidadActual*0.1;
+        if((durabilidadActual - durabilidadActual*0.1) < 0){
+            return 0;
+        }
+        return durabilidadActual - (durabilidadActual*0.1);
     }
 }
