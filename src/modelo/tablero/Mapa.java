@@ -1,7 +1,6 @@
 package modelo.tablero;
 
 import modelo.excepciones.ExcedeLimiteDeMapa;
-import modelo.excepciones.ObjetoNoMovil;
 import modelo.jugador.Jugador;
 
 import java.util.Map;
@@ -46,7 +45,7 @@ public class Mapa {
         return casillero.getContenido();
     }
 
-    public void moverObjeto(Posicion origen, Posicion destino) throws ObjetoNoMovil{
+    public void moverObjeto(Posicion origen, Posicion destino){
         Jugador jugador = (Jugador) this.getContenido(origen);
 
         this.agregarContenido(jugador, destino);

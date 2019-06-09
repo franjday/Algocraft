@@ -10,12 +10,17 @@ import modelo.tablero.*;
 public class Jugador implements Contenible {
     private Herramienta herramientaEquipada;
     private Inventario inventario;
+    private Mapa mapa;
+    private Posicion posicionActual;
 
 
-    public Jugador(){
+    public Jugador(Mapa unMapa, Posicion posicion){
         Constructor unConstructor = new HachaMaderaConstructor();
         herramientaEquipada = unConstructor.construir();
         inventario = new Inventario();
+        posicionActual = posicion;
+        mapa = unMapa;
+        unMapa.agregarContenido(this, posicionActual);
     }
 
     public Herramienta getHerramientaEquipada() {
@@ -39,5 +44,35 @@ public class Jugador implements Contenible {
 
     }
 
+    public void moverArriba(){
+        Posicion nuevaPosicion = new Posicion(posicionActual);
+        nuevaPosicion.subirEnY();
 
+        mapa.moverObjeto(posicionActual, nuevaPosicion);
+        this.posicionActual = nuevaPosicion;
+    }
+
+    public void moverAbajo(){
+        Posicion nuevaPosicion = new Posicion(posicionActual);
+        nuevaPosicion.bajarEnY();
+
+        mapa.moverObjeto(posicionActual, nuevaPosicion);
+        this.posicionActual = nuevaPosicion;
+    }
+
+    public void moverIzquierda(){
+        Posicion nuevaPosicion = new Posicion(posicionActual);
+        nuevaPosicion.bajarEnX();
+
+        mapa.moverObjeto(posicionActual, nuevaPosicion);
+        this.posicionActual = nuevaPosicion;
+    }
+
+    public void moverDerecha(){
+        Posicion nuevaPosicion = new Posicion(posicionActual);
+        nuevaPosicion.subirEnX();
+
+        mapa.moverObjeto(posicionActual, nuevaPosicion);
+        this.posicionActual = nuevaPosicion;
+    }
 }
