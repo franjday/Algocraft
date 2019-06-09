@@ -6,7 +6,7 @@ public class Casillero {
     private boolean casilleroOcupado = false;
     private Contenible contenido;
 
-    public void contener(Contenible unContenido){
+    public void contener(Contenible unContenido) throws CasilleroOcupado{
         if(this.casilleroOcupado)
             throw new CasilleroOcupado();
         this.contenido = unContenido;
