@@ -32,7 +32,7 @@ TP2 - Algocraft
  - [ ] Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
 ## Jugador:
 
- - [ ] Se verifica la correcta inicialización del jugador en el mapa.
+ - [x] Se verifica la correcta inicialización del jugador en el mapa.
  - [x] Se verifica que puede moverse para todas las direcciones vacías.
 ## Mapa:
 
