@@ -33,7 +33,7 @@ TP2 - Algocraft
 ## Jugador:
 
  - [ ] Se verifica la correcta inicialización del jugador en el mapa.
- - [ ] Se verifica que puede moverse para todas las direcciones vacías.
+ - [x] Se verifica que puede moverse para todas las direcciones vacías.
 ## Mapa:
 
  - [x] Se verifica que se puede ocupar un casillero vacío del terreno.
