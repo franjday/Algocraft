@@ -20,18 +20,7 @@ public class MapaTest {
     }
 
     @Test
-    public void testOcuparCasilleroVacioConPersonaje(){
-        Mapa unMapa = new Mapa(3, 3);
-        Posicion unaPosicion = new Posicion(0, 0);
-        Jugador unJugador = new Jugador(unMapa, unaPosicion);
-
-        unMapa.agregarContenido(unJugador, unaPosicion);
-
-        assertEquals(unJugador, unMapa.getContenido(unaPosicion));
-    }
-
-    @Test
-    public void testOcuparCasilleroVacioConMaterial(){
+    public void testOcuparCasilleroVacio(){
         Mapa unMapa = new Mapa(3, 3);
         Material unaMadera = new Madera();
         Posicion unaPosicion = new Posicion(0,0 );
@@ -56,9 +45,9 @@ public class MapaTest {
     public void testLiberarCasilleroRemueveContenido(){
         Mapa unMapa = new Mapa(3, 3);
         Posicion unaPosicion = new Posicion(0, 0);
-        Jugador unJugador = new Jugador(unMapa, unaPosicion);
+        Madera unaMadera = new Madera();
 
-        unMapa.agregarContenido(unJugador, unaPosicion);
+        unMapa.agregarContenido(unaMadera, unaPosicion);
         unMapa.removerContenido(unaPosicion);
 
         assertNull(unMapa.getContenido(unaPosicion));
@@ -71,7 +60,6 @@ public class MapaTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(1, 1);
 
-        unMapa.agregarContenido(unJugador, unaPosicion);
         unMapa.moverObjeto(unaPosicion, nuevaPosicion);
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
@@ -93,7 +81,6 @@ public class MapaTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(-1, -1);
 
-        unMapa.agregarContenido(unJugador, unaPosicion);
         unMapa.moverObjeto(unaPosicion, nuevaPosicion);
     }
 }
