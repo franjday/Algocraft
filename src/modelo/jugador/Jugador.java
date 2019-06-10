@@ -81,6 +81,8 @@ public class Jugador implements Contenible {
 
 
 
+
+
     //MOVIMIENTOS EN EL MAPA
 
     public void moverArriba(){

@@ -25,17 +25,14 @@ public class Inventario {
     }
 
 
-    public void EliminarHerramienta(Herramienta unaHerramienta) {
-        for (int i = 0; i < inventarioHerramientas.size(); i++) {
-            if (inventarioHerramientas.get(i) == unaHerramienta) {
-                inventarioHerramientas.set(i, null);
-            }
-        }
+    public void EliminarHerramienta(Herramienta unaHerramienta) { inventarioHerramientas.remove(unaHerramienta);
+    }
+
+    public void EliminarMaterial(Material unMaterial) { inventarioMateriales.remove(unMaterial);
     }
 
 
-    public void RecolectarMaterial(Material unMaterial) {
-        inventarioMateriales.add(unMaterial);
+    public void RecolectarMaterial(Material unMaterial) { inventarioMateriales.add(unMaterial);
     }
 
     public void RecolectarHerramienta(Herramienta unaHerramienta) {
