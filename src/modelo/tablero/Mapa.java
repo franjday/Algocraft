@@ -1,7 +1,9 @@
 package modelo.tablero;
 
+import modelo.excepciones.CasilleroOcupado;
 import modelo.excepciones.ExcedeLimiteDeMapa;
 import modelo.jugador.Jugador;
+import modelo.materiales.*;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -27,6 +29,24 @@ public class Mapa {
         destino.contener(nuevoContenido);
     }
 
+    public void agregarContenidoEnArea(String material, Posicion posicionInicial, int tamano) throws CasilleroOcupado{
+        if(areaOcupada(posicionInicial, tamano))
+            throw new CasilleroOcupado();
+
+        int posX = posicionInicial.getPosicionX();
+        int posY = posicionInicial.getPosicionY();
+
+        MaterialFactory materialFactory = new MaterialFactory();
+
+        for(int i = 0; i < tamano; i++){
+            for(int j = 0; j < tamano; j++){
+                Posicion posicion = new Posicion(posX+i, posY+j);
+                Material nuevoMaterial = materialFactory.getMaterial(material);
+                this.agregarContenido(nuevoMaterial, posicion);
+            }
+        }
+    }
+
     public void removerContenido(Posicion posicion){
         Casillero casilleroLiberar = this.getCasillero(posicion);
         casilleroLiberar.removerContenido();
@@ -50,5 +70,22 @@ public class Mapa {
 
         this.agregarContenido(jugador, destino);
         this.removerContenido(origen);
+    }
+
+    private boolean areaOcupada(Posicion posicionInicial, int tamano){
+        int posX = posicionInicial.getPosicionX();
+        int posY = posicionInicial.getPosicionY();
+
+        for(int i = 0; i < tamano; i++){
+            for(int j = 0; j < tamano; j++){
+                Posicion posicion = new Posicion(posX+i, posY+j);
+                if(mapa.get(posicion) == null)
+                    throw new ExcedeLimiteDeMapa();
+
+                if(mapa.get(posicion).casilleroEstaOcupado())
+                    return true;
+            }
+        }
+        return false;
     }
 }

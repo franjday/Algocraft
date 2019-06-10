@@ -21,4 +21,8 @@ public class Casillero {
         this.contenido = null;
         this.casilleroOcupado = false;
     }
+
+    public boolean casilleroEstaOcupado(){
+        return this.casilleroOcupado;
+    }
 }

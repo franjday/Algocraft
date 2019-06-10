@@ -65,6 +65,21 @@ public class MapaTest {
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
     }
 
+    @Test
+    public void testAgregarContenidoEnArea(){
+        Mapa unMapa = new Mapa(5, 5);
+        Posicion posicionInicial = new Posicion(0 ,0);
+
+        unMapa.agregarContenidoEnArea("madera", posicionInicial, 3);
+
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                Posicion posicion = new Posicion(i, j);
+                assert(unMapa.getContenido(posicion) instanceof Madera);
+            }
+        }
+    }
+
     @Test(expected = ExcedeLimiteDeMapa.class)
     public void testAgregarObjetoFueraDeRangoLanzaExcepcion(){
         Mapa unMapa = new Mapa(3, 3);
