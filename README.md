@@ -2,7 +2,6 @@
 TP2 - Algocraft
 
 [![Build Status](https://travis-ci.org/franjday/Algocraft.svg?branch=master)](https://travis-ci.org/franjday/Algocraft)
-[![codecov](https://codecov.io/gh/franjday/Algocraft/branch/master/graph/badge.svg)](https://codecov.io/gh/franjday/Algocraft)
 
 # Entrega 1 (Jueves 6 de Junio)
 ## Tests de Herramientas:
