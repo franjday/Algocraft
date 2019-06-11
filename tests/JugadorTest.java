@@ -28,6 +28,7 @@ public class JugadorTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(3, 4);
 
+        unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverArriba();
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
@@ -40,6 +41,7 @@ public class JugadorTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(3, 2);
 
+        unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverAbajo();
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
@@ -52,6 +54,7 @@ public class JugadorTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(2, 3);
 
+        unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverIzquierda();
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
@@ -64,6 +67,7 @@ public class JugadorTest {
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(4, 3);
 
+        unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverDerecha();
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
@@ -118,6 +122,7 @@ public class JugadorTest {
         Jugador unJugador = new Jugador(unMapa, posicionJugador);
         Posicion nuevaPosicion = new Posicion(3, 4);
 
+        unMapa.agregarContenido(unJugador, posicionJugador);
         unJugador.moverArriba();
         unJugador.moverAbajo();
 

@@ -41,5 +41,5 @@ TP2 - Algocraft
  - [x] Se verifica que un casillero puede ser ocupado por un material o personaje.
 ## Juego:
 
- - [ ] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
+ - [x] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
 

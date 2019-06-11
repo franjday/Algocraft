@@ -20,7 +20,6 @@ public class Jugador implements Contenible {
         inventario = new Inventario();
         posicionActual = posicion;
         mapa = unMapa;
-        unMapa.agregarContenido(this, posicionActual);
     }
 
     // RELACION CON HERRAMIENTAS Y MATERIALES

@@ -29,7 +29,9 @@ public class Mapa {
         destino.contener(nuevoContenido);
     }
 
-    public void agregarContenidoEnArea(String material, Posicion posicionInicial, int tamano) throws CasilleroOcupado{
+    public void agregarContenidoEnArea(String material, int x, int y, int tamano) throws CasilleroOcupado{
+        Posicion posicionInicial = new Posicion(x, y);
+
         if(areaOcupada(posicionInicial, tamano))
             throw new CasilleroOcupado();
 
