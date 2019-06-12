@@ -8,11 +8,10 @@ public class NuevaReceta extends Receta {
 
         Vacio vacio = Vacio.getInstance();
 
-        Material[] tmp = {  vacio,  vacio,  vacio,
+        Material[] auxiliar = {  vacio,  vacio,  vacio,
                             vacio,  vacio,  vacio,
                             vacio,  vacio,  vacio   };
-
-        receta = tmp;
+        receta = auxiliar;
 
     }
 }

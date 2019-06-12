@@ -8,18 +8,16 @@ public abstract class Receta {
     public Material[] receta;
     protected Constructor constructor;
     
-    private Boolean comparar_recetas(Receta receta_externa){
+    private boolean compararRecetas(Receta recetaExterna){
 
         for (int i = 0; i < 9; i++ ) {
-
-            if(receta[i] != receta_externa.receta[i] ){
-                return false;
-            }
+            if(receta[i] != recetaExterna.receta[i] ){ return false;}
         }
         return true;
     }
 
-    public Constructor buscar_coincidencias_con_patron_actual(){
+
+    public Constructor coincidenciaDeRecetas(){
 
         Receta[] lista_de_recetas = {
                 PicoMaderaReceta.getInstance(),
@@ -30,26 +28,19 @@ public abstract class Receta {
                 HachaPiedraReceta.getInstance(),
                 HachaMetalReceta.getInstance(),
         };
-
-        //Por cada receta en la lista
         for (Receta receta_almacenada: lista_de_recetas) {
-            if(this.comparar_recetas(receta_almacenada)){
-                return receta_almacenada.constructor;
-            }
+            if(this.compararRecetas(receta_almacenada)){ return receta_almacenada.constructor; }
         }
         return ConstructorVacio.getInstance();
     }
 
-    public void ingresar_material(Material material, int posicion){
-        if ( posicion < 0 || 8 < posicion ) return; //Todo: exepcion?
-        receta[posicion] = material;
+
+
+    public void ingresarMaterial(Material material, int posicion){
+        if ( posicion > 0 || posicion < 9 ) receta[posicion] = material;
     }
 
-    public Material eliminar_material(int posicion){
 
-        Material aux = receta[posicion];
-        receta[posicion] = Vacio.getInstance();
-        return aux;
-    }
+    public void eliminarMaterial(int posicion){ receta[posicion] = Vacio.getInstance();}
     
 }

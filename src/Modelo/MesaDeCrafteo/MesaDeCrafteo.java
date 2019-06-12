@@ -8,31 +8,31 @@ import Modelo.Materiales.*;
 
 public class MesaDeCrafteo {
 
-    private Receta receta_actual;       //Receta actual
-    private Constructor herramienta;    //Constructor asociado a la receta actual (si existe)
+    private Receta recetaActual;       //Receta sobre la mesa
+    private Constructor constructorDeHerramienta;  //Constructor de una herramienta asociado a la receta actual (si existe)
 
     public MesaDeCrafteo(){
-        receta_actual = new NuevaReceta();
+        recetaActual = new NuevaReceta();
     }
 
-    //Ante cualquier alteracion de la receta actual comprueba si hay algun constructor asociado y lo asigna
-    private void chequear_receta(){
-        this.herramienta = receta_actual.buscar_coincidencias_con_patron_actual();
+
+    // Comprueba si hay algun constructor asociado y lo asigna
+    private void comprobarReceta(){
+        this.constructorDeHerramienta = recetaActual.coincidenciaDeRecetas();
     }
 
-    public void ingresar_material(Material material, int posicion){
-        receta_actual.ingresar_material(material,posicion);
-        this.chequear_receta();
+    public void ingresarMaterial(Material material, int posicion){
+        recetaActual.ingresarMaterial(material,posicion);
+        this.comprobarReceta();
     }
 
-    public Material eliminar_material(int posicion){
-        Material aux = receta_actual.eliminar_material(posicion);
-        this.chequear_receta();
-        return aux;
+    public void eliminarMaterial(int posicion){
+        recetaActual.eliminarMaterial(posicion);
+        this.comprobarReceta();
     }
 
-    //Ejecuta el metodo construir() del constructor previamente asignado segun el patron actual.
-    public Herramienta craftear(){
-        return herramienta.construir();
+    //Construye lo que hay en el constructor.
+    public Herramienta construirHerramienta(){
+        return constructorDeHerramienta.construir();
     }
 }
