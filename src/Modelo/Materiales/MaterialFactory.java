@@ -1,4 +1,4 @@
-package modelo.materiales;
+package Modelo.Materiales;
 
 public class MaterialFactory {
     public Material getMaterial(String tipoDeMaterial){

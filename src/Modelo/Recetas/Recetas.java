@@ -1,8 +1,8 @@
-package modelo.construccion;
+package Modelo.Recetas;
 
-import modelo.excepciones.*;
-import modelo.herramientas.*;
-import modelo.materiales.*;
+import Modelo.Excepciones.*;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
 
 import java.util.Arrays;
 import java.util.HashMap;

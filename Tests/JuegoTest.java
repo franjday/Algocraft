@@ -1,7 +1,7 @@
-import modelo.juego.*;
-import modelo.jugador.Jugador;
-import modelo.tablero.*;
-import modelo.materiales.*;
+import Modelo.Juego.*;
+import Modelo.Jugador.Jugador;
+import Modelo.Tablero.*;
+import Modelo.Materiales.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

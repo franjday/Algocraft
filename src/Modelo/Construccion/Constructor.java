@@ -1,6 +1,6 @@
-package modelo.construccion;
+package Modelo.Construccion;
 
-import modelo.herramientas.*;
+import Modelo.Herramientas.*;
 
 public abstract class Constructor {
 

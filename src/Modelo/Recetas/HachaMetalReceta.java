@@ -1,6 +1,7 @@
-package modelo.construccion;
+package Modelo.Recetas;
 
-import modelo.materiales.*;
+import Modelo.Construccion.HachaMetalConstructor;
+import Modelo.Materiales.*;
 
 public class HachaMetalReceta extends Receta {
 

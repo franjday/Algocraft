@@ -1,6 +1,7 @@
-package modelo.construccion;
+package Modelo.Recetas;
 
-import modelo.materiales.*;
+import Modelo.Construccion.PicoMaderaConstructor;
+import Modelo.Materiales.*;
 
 public class PicoMaderaReceta extends Receta {
 

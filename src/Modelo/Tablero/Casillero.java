@@ -1,6 +1,6 @@
-package modelo.tablero;
+package Modelo.Tablero;
 
-import modelo.excepciones.CasilleroOcupado;
+import Modelo.Excepciones.CasilleroOcupado;
 
 public class Casillero {
     private boolean casilleroOcupado = false;

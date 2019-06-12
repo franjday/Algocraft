@@ -1,7 +1,7 @@
-package modelo.construccion;
+package Modelo.Construccion;
 
-import modelo.desgaste.DesgastableFino;
-import modelo.herramientas.*;
+import Modelo.Desgastes.DesgastableFino;
+import Modelo.Herramientas.*;
 
 public class ConstructorVacio extends Constructor {
 

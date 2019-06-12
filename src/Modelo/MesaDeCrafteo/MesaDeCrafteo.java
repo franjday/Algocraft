@@ -1,10 +1,10 @@
-package modelo.especiales;
+package Modelo.MesaDeCrafteo;
 
-import modelo.Recetas.NuevaReceta;
-import modelo.Recetas.Receta;
-import modelo.Construccion.*;
-import modelo.herramientas.Herramienta;
-import modelo.materiales.*;
+import Modelo.Recetas.NuevaReceta;
+import Modelo.Recetas.Receta;
+import Modelo.Construccion.*;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Materiales.*;
 
 public class MesaDeCrafteo {
 

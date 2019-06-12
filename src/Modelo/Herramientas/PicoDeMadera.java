@@ -1,7 +1,7 @@
-package modelo.herramientas;
+package Modelo.Herramientas;
 
-import modelo.desgaste.*;
-import modelo.materiales.*;
+import Modelo.Desgastes.*;
+import Modelo.Materiales.*;
 
 public class PicoDeMadera extends Pico {
 

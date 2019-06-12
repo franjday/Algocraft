@@ -1,4 +1,4 @@
-package modelo.desgaste;
+package Modelo.Desgastes;
 
 public class DesgastableLineal implements Desgastable {
     protected double coeficienteDesgaste;

@@ -1,4 +1,4 @@
-package modelo.tablero;
+package Modelo.Tablero;
 
 public interface Contenible {
 }

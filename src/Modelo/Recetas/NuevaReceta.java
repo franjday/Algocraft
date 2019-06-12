@@ -1,6 +1,6 @@
-package modelo.construccion;
+package Modelo.Recetas;
 
-import modelo.materiales.*;
+import Modelo.Materiales.*;
 
 public class NuevaReceta extends Receta {
 

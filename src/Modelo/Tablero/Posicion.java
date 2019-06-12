@@ -1,4 +1,4 @@
-package modelo.tablero;
+package Modelo.Tablero;
 
 public class Posicion {
     private int posicionX;

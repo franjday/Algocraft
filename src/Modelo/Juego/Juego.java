@@ -1,7 +1,7 @@
-package modelo.juego;
+package Modelo.Juego;
 
-import modelo.tablero.*;
-import modelo.jugador.*;
+import Modelo.Tablero.*;
+import Modelo.Jugador.*;
 
 public class Juego {
     private Jugador jugador;

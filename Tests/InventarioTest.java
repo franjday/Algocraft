@@ -1,13 +1,11 @@
-import modelo.construccion.*;
-import modelo.herramientas.*;
-import modelo.jugador.Inventario;
-import modelo.jugador.Jugador;
-import modelo.materiales.*;
-import java.util.*;
-import java.util.ArrayList;
+import Modelo.Construccion.*;
+import Modelo.Herramientas.*;
+import Modelo.Jugador.Inventario;
+import Modelo.Jugador.Jugador;
+import Modelo.Materiales.*;
 
-import modelo.tablero.Mapa;
-import modelo.tablero.Posicion;
+import Modelo.Tablero.Mapa;
+import Modelo.Tablero.Posicion;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

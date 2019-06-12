@@ -1,7 +1,7 @@
-package modelo.construccion;
+package Modelo.Construccion;
 
-import modelo.desgaste.*;
-import modelo.herramientas.*;
+import Modelo.Desgastes.*;
+import Modelo.Herramientas.*;
 
 public class HachaPiedraConstructor extends Constructor{
 

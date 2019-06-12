@@ -1,8 +1,7 @@
 
-import modelo.especiales.*;
-import modelo.herramientas.*;
-import modelo.construccion.*;
-import modelo.materiales.*;
+import Modelo.MesaDeCrafteo.*;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

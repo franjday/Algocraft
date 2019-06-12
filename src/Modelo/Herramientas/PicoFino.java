@@ -1,7 +1,7 @@
-package modelo.herramientas;
+package Modelo.Herramientas;
 
-import modelo.desgaste.Desgastable;
-import modelo.materiales.*;
+import Modelo.Desgastes.Desgastable;
+import Modelo.Materiales.*;
 
 public class
 PicoFino extends Pico {

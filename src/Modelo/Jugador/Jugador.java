@@ -1,11 +1,10 @@
-package modelo.jugador;
+package Modelo.Jugador;
 
 import java.util.*;
-import modelo.construccion.*;
-import modelo.herramientas.*;
-import modelo.materiales.*;
-import modelo.jugador.Inventario.*;
-import modelo.tablero.*;
+import Modelo.Construccion.*;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
+import Modelo.Tablero.*;
 
 public class Jugador implements Contenible {
     private Herramienta herramientaEquipada;

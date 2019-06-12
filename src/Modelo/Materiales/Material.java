@@ -1,6 +1,6 @@
-package modelo.materiales;
+package Modelo.Materiales;
 
-import modelo.tablero.*;
+import Modelo.Tablero.*;
 
 public abstract class Material implements Contenible {
     protected int durabilidad;

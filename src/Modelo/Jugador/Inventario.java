@@ -1,7 +1,7 @@
-package modelo.jugador;
-import modelo.herramientas.*;
-import modelo.materiales.*;
-import java.util.*;
+package Modelo.Jugador;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
+
 import java.util.ArrayList;
 
 

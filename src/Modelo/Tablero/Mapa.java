@@ -1,9 +1,9 @@
-package modelo.tablero;
+package Modelo.Tablero;
 
-import modelo.excepciones.CasilleroOcupado;
-import modelo.excepciones.ExcedeLimiteDeMapa;
-import modelo.jugador.Jugador;
-import modelo.materiales.*;
+import Modelo.Excepciones.CasilleroOcupado;
+import Modelo.Excepciones.ExcedeLimiteDeMapa;
+import Modelo.Jugador.Jugador;
+import Modelo.Materiales.*;
 
 import java.util.Map;
 import java.util.HashMap;

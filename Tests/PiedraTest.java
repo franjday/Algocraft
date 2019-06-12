@@ -1,7 +1,7 @@
-import modelo.construccion.*;
-import modelo.construccion.HachaMaderaConstructor;
-import modelo.materiales.*;
-import modelo.herramientas.*;
+import Modelo.Construccion.*;
+import Modelo.Construccion.HachaMaderaConstructor;
+import Modelo.Materiales.*;
+import Modelo.Herramientas.*;
 
 import org.junit.Test;
 

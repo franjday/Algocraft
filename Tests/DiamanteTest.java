@@ -1,6 +1,6 @@
-import modelo.construccion.*;
-import modelo.materiales.*;
-import modelo.herramientas.*;
+import Modelo.Construccion.*;
+import Modelo.Materiales.*;
+import Modelo.Herramientas.*;
 
 import org.junit.Test;
 

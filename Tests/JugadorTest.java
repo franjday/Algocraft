@@ -1,9 +1,9 @@
-import modelo.excepciones.CasilleroOcupado;
-import modelo.excepciones.ExcedeLimiteDeMapa;
-import modelo.herramientas.*;
-import modelo.jugador.*;
-import modelo.materiales.*;
-import modelo.tablero.*;
+import Modelo.Excepciones.CasilleroOcupado;
+import Modelo.Excepciones.ExcedeLimiteDeMapa;
+import Modelo.Herramientas.*;
+import Modelo.Jugador.*;
+import Modelo.Materiales.*;
+import Modelo.Tablero.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

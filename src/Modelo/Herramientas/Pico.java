@@ -1,6 +1,4 @@
-package modelo.herramientas;
-
-import modelo.desgaste.*;
+package Modelo.Herramientas;
 
 public abstract class Pico extends Herramienta{
 

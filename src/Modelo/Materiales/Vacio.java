@@ -1,4 +1,4 @@
-package modelo.materiales;
+package Modelo.Materiales;
 
 public class Vacio extends Material {
 

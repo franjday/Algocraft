@@ -1,6 +1,6 @@
-import modelo.construccion.*;
-import modelo.herramientas.*;
-import modelo.materiales.*;
+import Modelo.Construccion.*;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
