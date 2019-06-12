@@ -1,6 +1,8 @@
 package modelo.especiales;
 
-import modelo.construccion.*;
+import modelo.Recetas.NuevaReceta;
+import modelo.Recetas.Receta;
+import modelo.Construccion.*;
 import modelo.herramientas.Herramienta;
 import modelo.materiales.*;
 
