@@ -13,6 +13,7 @@ public class MesaDeCrafteo {
 
     public MesaDeCrafteo(){
         recetaActual = new NuevaReceta();
+        constructorDeHerramienta = ConstructorVacio.getInstance();
     }
 
 

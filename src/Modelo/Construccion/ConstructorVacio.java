@@ -1,9 +1,10 @@
 package Modelo.Construccion;
 
 import Modelo.Desgastes.DesgastableFino;
+import Modelo.Excepciones.RecetaInvalida;
 import Modelo.Herramientas.*;
 
-public class ConstructorVacio extends Constructor {
+public class ConstructorVacio extends Constructor  {
 
     //Singleton
     private static Constructor instancia = new ConstructorVacio();
@@ -16,9 +17,7 @@ public class ConstructorVacio extends Constructor {
 
     public Herramienta construir(){
 
-        //TODO: anular el efecto de este método. Lanzar excepcion?
+        throw new RecetaInvalida();
 
-        return new PicoDeMetal(10,10,new DesgastableFino());
-        //Devuelve un pico cualquiera que valide el metodo, pero no se deberia poder
     }
 }
