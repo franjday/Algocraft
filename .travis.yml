@@ -2,10 +2,10 @@ language: java
 jdk:
 - oraclejdk11
 
-notifications:
-  email: false
-
 install: ant
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: false
