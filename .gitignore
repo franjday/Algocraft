@@ -3,18 +3,10 @@
 
 *.iml
 
-out/test/Algocraft/META-INF/
+out/
 
 *.class
-
-out/production/Algocraft/META-INF/
 
 libs/analysis/
 
 libs/
-
-out/production/Algocraft/Vista/imagenes/
-
-out/production/Algocraft/Vista/sonidos/
-
-out/production/Algocraft/Vista/
