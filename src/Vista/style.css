@@ -1,3 +1,9 @@
 .root{
     -fx-background-image: url("imagenes/background.png");
 }
+
+.button{
+    -fx-padding: 0;
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+}
