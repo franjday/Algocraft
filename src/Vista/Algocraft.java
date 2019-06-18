@@ -1,6 +1,7 @@
 package Vista;
 
 
+import Controlador.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -42,7 +43,7 @@ public class Algocraft extends Application {
         BorderPane.setMargin(titulo, new Insets(50,0,0,0));
         root.setTop(titulo);
 
-        setBotones(root);
+        setBotones(root, primaryStage);
 
         Scene scene = new Scene(root, ANCHO, ALTO);
         scene.getStylesheets().add("Vista/style.css");
@@ -59,7 +60,7 @@ public class Algocraft extends Application {
         mediaPlayer.play();
     }
 
-    private void setBotones(BorderPane borderPane){
+    private void setBotones(BorderPane borderPane, Stage primaryStage){
         String audioFile = "sonidos/click_boton.mp3";
         AudioClip clickBoton = new AudioClip(getClass().getResource(audioFile).toExternalForm());
 
@@ -67,12 +68,13 @@ public class Algocraft extends Application {
         Image imagenJugar = new Image("Vista/imagenes/BotonJugar.png");
         ImageView jugar = new ImageView(imagenJugar);
         botonJugar.setGraphic(jugar);
+        botonJugar.setOnAction(new BotonJugarEventHandler(this, primaryStage));
 
         Button botonAbout = new Button();
         Image imagenAbout = new Image("Vista/imagenes/BotonAbout.png");
         ImageView about = new ImageView(imagenAbout);
         botonAbout.setGraphic(about);
-        botonAbout.setOnAction(actionEvent -> clickBoton.play());
+        botonAbout.setOnAction(e->clickBoton.play());
 
         Button botonSalir = new Button();
         Image imagenSalir = new Image("Vista/imagenes/BotonSalir.png");
