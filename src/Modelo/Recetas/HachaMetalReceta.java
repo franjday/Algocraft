@@ -11,13 +11,9 @@ public class HachaMetalReceta extends Receta {
         Metal metal = Metal.getInstance();
         Vacio vacio = Vacio.getInstance();
 
-        Material[] tmp = {  metal, metal,  vacio,
-                            metal, madera, vacio,
-                            vacio, madera, vacio    };
-
-        receta = tmp;
         constructor = new HachaMetalConstructor();
-
+        patron = new Material[]{  metal, metal,  vacio,
+                                  metal, madera, vacio,
+                                  vacio, madera, vacio};
     }
-
 }

@@ -169,15 +169,15 @@ public class MesaDeCrafteoTest {
 
         Madera madera = Madera.getInstance();
 
-        //Copio la receta del pico de madera
+        //Copio la patron del pico de madera
         mesa.ingresarMaterial(madera,0);
         mesa.ingresarMaterial(madera,1);
         mesa.ingresarMaterial(madera,2);
         mesa.ingresarMaterial(madera,4);
         mesa.ingresarMaterial(madera,7);
 
-        //Al eliminar un material, ya no debería ser una receta válida
-        mesa.eliminarMaterial(0);
+        //Al eliminar un material, ya no debería ser una patron válida
+        Material material = mesa.eliminarMaterial(0);
 
         try{
             mesa.construirHerramienta();

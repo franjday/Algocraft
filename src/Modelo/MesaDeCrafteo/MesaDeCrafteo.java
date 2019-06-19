@@ -1,25 +1,20 @@
 package Modelo.MesaDeCrafteo;
 
 import Modelo.Recetas.NuevaReceta;
-import Modelo.Recetas.Receta;
-import Modelo.Construccion.*;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.*;
 
 public class MesaDeCrafteo {
 
-    private Receta recetaActual;       //Receta sobre la mesa
-    private Constructor constructorDeHerramienta;  //Constructor de una herramienta asociado a la receta actual (si existe)
+    private NuevaReceta recetaActual;       //Receta sobre la mesa
 
     public MesaDeCrafteo(){
         recetaActual = new NuevaReceta();
-        constructorDeHerramienta = new ConstructorVacio();
     }
-
 
     // Comprueba si hay algun constructor asociado y lo asigna
     private void comprobarReceta(){
-        this.constructorDeHerramienta = recetaActual.coincidenciaDeRecetas();
+        recetaActual.actualizarConstructor();
     }
 
     public void ingresarMaterial(Material material, int posicion){
@@ -27,13 +22,14 @@ public class MesaDeCrafteo {
         this.comprobarReceta();
     }
 
-    public void eliminarMaterial(int posicion){
-        recetaActual.eliminarMaterial(posicion);
+    public Material eliminarMaterial(int posicion){
+        Material material = recetaActual.eliminarMaterial(posicion);
         this.comprobarReceta();
+        return material;
     }
 
     //Construye lo que hay en el constructor.
     public Herramienta construirHerramienta(){
-        return constructorDeHerramienta.construir();
+        return recetaActual.constructor.construir();
     }
 }

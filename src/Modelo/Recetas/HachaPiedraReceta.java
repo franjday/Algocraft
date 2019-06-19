@@ -11,12 +11,9 @@ public class HachaPiedraReceta extends Receta {
         Piedra piedra = Piedra.getInstance();
         Vacio vacio = Vacio.getInstance();
 
-        Material[] tmp = {  piedra, piedra, vacio,
-                            piedra, madera, vacio,
-                            vacio,  madera, vacio };
-
-        receta = tmp;
         constructor = new HachaPiedraConstructor();
-
+        patron = new Material[]{  piedra, piedra, vacio,
+                                  piedra, madera, vacio,
+                                  vacio,  madera, vacio };
     }
 }

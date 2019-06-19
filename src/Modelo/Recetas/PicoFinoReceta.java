@@ -12,12 +12,9 @@ public class PicoFinoReceta extends Receta {
         Metal metal = Metal.getInstance();
         Vacio vacio = Vacio.getInstance();
 
-        Material[] tmp = {  metal,  metal,  metal,
-                            piedra, madera, vacio,
-                            vacio,  madera, vacio   };
-
-        receta = tmp;
         constructor = new PicoFinoConstructor();
-
+        patron = new Material[]{  metal,  metal,  metal,
+                                  piedra, madera, vacio,
+                                  vacio,  madera, vacio };
     }
 }

@@ -10,13 +10,9 @@ public class PicoMaderaReceta extends Receta {
         Madera madera = Madera.getInstance();
         Vacio vacio = Vacio.getInstance();
 
-
-        Material[] tmp = {  madera, madera, madera,
-                            vacio,  madera, vacio,
-                            vacio,  madera, vacio   };
-
-        receta = tmp;
         constructor = new PicoMaderaConstructor();
-
+        patron = new Material[]{  madera, madera, madera,
+                                  vacio,  madera, vacio,
+                                  vacio,  madera, vacio };
     }
 }

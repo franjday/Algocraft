@@ -11,12 +11,10 @@ class PicoPiedraReceta extends Receta {
         Piedra piedra = Piedra.getInstance();
         Vacio vacio = Vacio.getInstance();
 
-        Material[] tmp = {  piedra, piedra, piedra,
-                            vacio,  madera, vacio,
-                            vacio,  madera, vacio   };
-
-        receta = tmp;
         constructor = new PicoPiedraConstructor();
+        patron = new Material[]{  piedra, piedra, piedra,
+                                  vacio,  madera, vacio,
+                                  vacio,  madera, vacio };
 
     }
 

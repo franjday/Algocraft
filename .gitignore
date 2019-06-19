@@ -10,3 +10,9 @@ out/
 libs/analysis/
 
 libs/
+
+compilacion/
+
+.DS_Store
+
+.gitignore
