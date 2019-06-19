@@ -4,14 +4,8 @@ import Modelo.Construccion.HachaPiedraConstructor;
 import Modelo.Materiales.*;
 
 public class HachaPiedraReceta extends Receta {
-
-    //Singleton
-    private static HachaPiedraReceta instancia = new HachaPiedraReceta();
-    public static HachaPiedraReceta getInstance(){
-        return instancia;
-    }
     
-    private HachaPiedraReceta(){
+    public HachaPiedraReceta(){
 
         Madera madera = Madera.getInstance();
         Piedra piedra = Piedra.getInstance();

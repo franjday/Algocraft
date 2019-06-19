@@ -4,14 +4,8 @@ import Modelo.Construccion.PicoMetalConstructor;
 import Modelo.Materiales.*;
 
 public class PicoMetalReceta extends Receta {
-
-    //Singleton
-    private static PicoMetalReceta instancia = new PicoMetalReceta();
-    public static PicoMetalReceta getInstance(){
-        return instancia;
-    }
     
-    private PicoMetalReceta(){
+    public PicoMetalReceta(){
 
         Madera madera = Madera.getInstance();
         Metal metal = Metal.getInstance();

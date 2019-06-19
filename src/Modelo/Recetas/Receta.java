@@ -8,7 +8,7 @@ public abstract class Receta {
     public Material[] receta;
     protected Constructor constructor;
     
-    private boolean compararRecetas(Receta recetaExterna){
+    private boolean compararConReceta(Receta recetaExterna){
 
         for (int i = 0; i < 9; i++ ) {
             if(receta[i] != recetaExterna.receta[i] ){ return false;}
@@ -19,19 +19,19 @@ public abstract class Receta {
 
     public Constructor coincidenciaDeRecetas(){
 
-        Receta[] lista_de_recetas = {
-                PicoMaderaReceta.getInstance(),
-                PicoPiedraReceta.getInstance(),
-                PicoMetalReceta.getInstance(),
-                PicoFinoReceta.getInstance(),
-                HachaMaderaReceta.getInstance(),
-                HachaPiedraReceta.getInstance(),
-                HachaMetalReceta.getInstance(),
+        Receta[] listaDeRecetas = {
+                new PicoMaderaReceta(),
+                new PicoPiedraReceta(),
+                new PicoMetalReceta(),
+                new PicoFinoReceta(),
+                new HachaMaderaReceta(),
+                new HachaPiedraReceta(),
+                new HachaMetalReceta(),
         };
-        for (Receta receta_almacenada: lista_de_recetas) {
-            if(this.compararRecetas(receta_almacenada)){ return receta_almacenada.constructor; }
+        for (Receta receta: listaDeRecetas) {
+            if(this.compararConReceta(receta)){ return receta.constructor; }
         }
-        return ConstructorVacio.getInstance();
+        return new ConstructorVacio();
     }
 
 
