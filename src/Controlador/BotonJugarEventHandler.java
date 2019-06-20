@@ -1,8 +1,7 @@
 package Controlador;
 
 import Vista.Algocraft;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import Vista.JuegoViewer;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
@@ -20,6 +19,7 @@ public class BotonJugarEventHandler extends BotonEventHandler {
     @Override
     public void handle(ActionEvent actionEvent){
         super.handle(actionEvent);
-
+        JuegoViewer juegoView = new JuegoViewer(primaryStage, app);
+        juegoView.iniciarJuego();
     }
 }

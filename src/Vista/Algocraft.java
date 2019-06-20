@@ -74,13 +74,13 @@ public class Algocraft extends Application {
         Image imagenAbout = new Image("Vista/imagenes/BotonAbout.png");
         ImageView about = new ImageView(imagenAbout);
         botonAbout.setGraphic(about);
-        botonAbout.setOnAction(e->clickBoton.play());
+        botonAbout.setOnAction(e -> clickBoton.play());
 
         Button botonSalir = new Button();
         Image imagenSalir = new Image("Vista/imagenes/BotonSalir.png");
         ImageView salir = new ImageView(imagenSalir);
         botonSalir.setGraphic(salir);
-        botonSalir.setOnAction(actionEvent -> Platform.exit());
+        botonSalir.setOnAction(e -> Platform.exit());
 
         VBox cajaBotones = new VBox(botonJugar, botonAbout, botonSalir);
         cajaBotones.setAlignment(Pos.CENTER);
