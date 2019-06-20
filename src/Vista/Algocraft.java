@@ -49,6 +49,7 @@ public class Algocraft extends Application {
         scene.getStylesheets().add("Vista/style.css");
         primaryStage.getIcons().add(imagenIcono);
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
