@@ -1,3 +1,7 @@
 #juegoView{
     -fx-background-image: url("imagenes/background_juego.png");
 }
+
+#inventarioHerramienta{
+    -fx-background-image: url("imagenes/inventario_herramientas.png");
+}

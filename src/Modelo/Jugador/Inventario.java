@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 
 public class Inventario {
-    private ArrayList inventarioMateriales;
-    private ArrayList inventarioHerramientas;
+    private ArrayList<Material> inventarioMateriales;
+    private ArrayList<Herramienta> inventarioHerramientas;
 
     public Inventario() {
-        inventarioHerramientas = new ArrayList<Herramienta>();
-        inventarioMateriales = new ArrayList<Material>();
+        inventarioHerramientas = new ArrayList<>();
+        inventarioMateriales = new ArrayList<>();
     }
 
     public ArrayList getMateriales() {

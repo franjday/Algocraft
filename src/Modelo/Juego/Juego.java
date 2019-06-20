@@ -46,4 +46,8 @@ public class Juego {
     public Mapa getMapa() {
         return mapa;
     }
+
+    public Jugador getJugador(){
+        return this.jugador;
+    }
 }

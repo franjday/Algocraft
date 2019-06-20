@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Algocraft extends Application {
-    private final static int ANCHO = 800;
-    private final static int ALTO = 600;
+    private final static int ANCHO = 820;
+    private final static int ALTO = 820;
     private static MediaPlayer mediaPlayer;
 
     public static void main(String[] args){
@@ -49,7 +49,7 @@ public class Algocraft extends Application {
         scene.getStylesheets().add("Vista/style.css");
         primaryStage.getIcons().add(imagenIcono);
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.show();
     }
 
@@ -71,11 +71,6 @@ public class Algocraft extends Application {
         botonJugar.setGraphic(jugar);
         botonJugar.setOnAction(new BotonJugarEventHandler(this, primaryStage));
 
-        Button botonAbout = new Button();
-        Image imagenAbout = new Image("Vista/imagenes/BotonAbout.png");
-        ImageView about = new ImageView(imagenAbout);
-        botonAbout.setGraphic(about);
-        botonAbout.setOnAction(e -> clickBoton.play());
 
         Button botonSalir = new Button();
         Image imagenSalir = new Image("Vista/imagenes/BotonSalir.png");
@@ -83,9 +78,9 @@ public class Algocraft extends Application {
         botonSalir.setGraphic(salir);
         botonSalir.setOnAction(e -> Platform.exit());
 
-        VBox cajaBotones = new VBox(botonJugar, botonAbout, botonSalir);
+        VBox cajaBotones = new VBox(botonJugar, botonSalir);
         cajaBotones.setAlignment(Pos.CENTER);
-        cajaBotones.setSpacing(30);
+        cajaBotones.setSpacing(60);
 
         borderPane.setCenter(cajaBotones);
     }
