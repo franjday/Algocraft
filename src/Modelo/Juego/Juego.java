@@ -1,5 +1,7 @@
 package Modelo.Juego;
 
+import Modelo.Desgastes.DesgastableLineal;
+import Modelo.Herramientas.PicoDeMadera;
 import Modelo.Tablero.*;
 import Modelo.Jugador.*;
 

@@ -1,14 +1,12 @@
 package Vista;
 
 import Modelo.Juego.Juego;
-import Modelo.Jugador.Inventario;
+import Modelo.Jugador.Jugador;
 import Modelo.Tablero.Mapa;
-import Vista.sonidos.InventarioHerramientaViewer;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 
 public class JuegoViewer {
     private static JuegoViewer Instance;
@@ -30,13 +28,12 @@ public class JuegoViewer {
 
         Juego nuevoJuego = new Juego();
         Mapa mapa = nuevoJuego.getMapa();
-        ArrayList inventarioHerramienta = nuevoJuego.getJugador().getInventarioHerramientas();
+        Jugador jugador = nuevoJuego.getJugador();
 
         MapaViewer mapaView = new MapaViewer(mapa);
-        InventarioHerramientaViewer herramientaView = new InventarioHerramientaViewer(inventarioHerramienta);
+        HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas());
 
-        juegoView.getChildren().addAll(mapaView, herramientaView);
-        herramientaView.setTranslateY(409);
+        juegoView.getChildren().addAll(mapaView, herramientasView);
 
         Scene escenarioJuego = new Scene(juegoView, 820, 860);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");

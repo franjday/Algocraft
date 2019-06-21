@@ -2,6 +2,34 @@
     -fx-background-image: url("imagenes/background_juego.png");
 }
 
-#inventarioHerramienta{
-    -fx-background-image: url("imagenes/inventario_herramientas.png");
+#botonHachaMadera{
+    -fx-background-image: url("imagenes/botonHachaMadera.png");
+}
+
+#botonHachaPiedra{
+    -fx-background-image: url("imagenes/botonHachaPiedra.png");
+}
+
+#botonHachaMetal{
+    -fx-background-image: url("imagenes/botonHachaMetal.png");
+}
+
+#botonPicoMadera{
+    -fx-background-image: url("imagenes/botonPicoMadera.png");
+}
+
+#botonPicoPiedra{
+    -fx-background-image: url("imagenes/botonPicoPiedra.png");
+}
+
+#botonPicoMetal{
+    -fx-background-image: url("imagenes/botonPicoMetal.png");
+}
+
+#botonPicoFino{
+    -fx-background-image: url("imagenes/botonPicoFino.png");
+}
+
+#botonVacio{
+    -fx-background-image: url("imagenes/botonVacio.png");
 }
