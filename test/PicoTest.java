@@ -7,12 +7,21 @@ import static org.junit.Assert.assertEquals;
 
 public class PicoTest {
 
+    private final int DURABILIDADPICOMADERA = 100;
+    private final int FUERZAPICOMADERA = 2;
+    private final int DURABILIDADPICOPIEDRA = 200;
+    private final int FUERZAPICOPIEDRA = 4;
+    private final int DURABILIDADPICOMETAL = 400;
+    private final int FUERZAPICOMETAL = 12;
+    private final int DURABILIDADPICOFINO = 1000;
+    private final int FUERZAPICOFINO = 20;
+
     @Test
     public void testPicoDeMaderaCon100Durabilidad(){
         Constructor unConstructor = new PicoMaderaConstructor();
         Pico unPicoDeMadera = (Pico)unConstructor.construir();
 
-        assertEquals(100, unPicoDeMadera.getDurabilidad());
+        assertEquals(DURABILIDADPICOMADERA, unPicoDeMadera.getDurabilidad());
     }
 
     @Test
@@ -20,7 +29,23 @@ public class PicoTest {
         Constructor unConstructor = new PicoMaderaConstructor();
         Pico unPicoDeMadera = (Pico)unConstructor.construir();
 
-        assertEquals(2, unPicoDeMadera.getFuerza());
+        assertEquals(FUERZAPICOMADERA, unPicoDeMadera.getFuerza());
+    }
+
+    @Test
+    public void testPicoDePiedraCon200Durabilidad(){
+        Constructor unConstructor = new PicoMaderaConstructor();
+        Pico unPicoDeMadera = (Pico)unConstructor.construir();
+
+        assertEquals(DURABILIDADPICOPIEDRA, unPicoDeMadera.getDurabilidad());
+    }
+
+    @Test
+    public void testPicoDePiedraCon4Fuerza(){
+        Constructor unConstructor = new PicoMaderaConstructor();
+        Pico unPicoDeMadera = (Pico)unConstructor.construir();
+
+        assertEquals(FUERZAPICOPIEDRA, unPicoDeMadera.getFuerza());
     }
 
     @Test
@@ -28,15 +53,15 @@ public class PicoTest {
         Constructor unConstructor = new PicoMetalConstructor();
         Pico unPicoDeMetal = (Pico)unConstructor.construir();
 
-        assertEquals(400, unPicoDeMetal.getDurabilidad());
+        assertEquals(DURABILIDADPICOMETAL, unPicoDeMetal.getDurabilidad());
     }
 
     @Test
-    public void testPicoDeMetalCon10Fuerza(){
+    public void testPicoDeMetalCon12Fuerza(){
         Constructor unConstructor = new PicoMetalConstructor();
         Pico unPicoDeMetal = (Pico)unConstructor.construir();
 
-        assertEquals(12, unPicoDeMetal.getFuerza());
+        assertEquals(FUERZAPICOMETAL, unPicoDeMetal.getFuerza());
     }
 
     @Test
@@ -44,7 +69,7 @@ public class PicoTest {
         Constructor unConstructor = new PicoFinoConstructor();
         Pico unPicoFino = (Pico)unConstructor.construir();
 
-        assertEquals(1000, unPicoFino.getDurabilidad());
+        assertEquals(DURABILIDADPICOFINO, unPicoFino.getDurabilidad());
     }
 
     @Test
@@ -52,7 +77,7 @@ public class PicoTest {
         Constructor unConstructor = new PicoFinoConstructor();
         Pico unPicoFino = (Pico)unConstructor.construir();
 
-        assertEquals(20, unPicoFino.getFuerza());
+        assertEquals(FUERZAPICOFINO, unPicoFino.getFuerza());
     }
 
     @Test

@@ -7,12 +7,19 @@ import static org.junit.Assert.assertEquals;
 
 public class HachaTest {
 
+    private final int DURABILIDADHACHAMADERA = 100;
+    private final int FUERZAHACHAMADERA = 2;
+    private final int DURABILIDADHACHAPIEDRA = 200;
+    private final int FUERZAHACHAPIEDRA = 5;
+    private final int DURABILIDADHACHAMETAL = 400;
+    private final int FUERZAHACHAMETAL = 10;
+
     @Test
     public void testHachaDeMaderaCon100Durabilidad(){
         Constructor unConstructor = new HachaMaderaConstructor();
         Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
 
-        assertEquals(100, unHachaDeMadera.getDurabilidad());
+        assertEquals(DURABILIDADHACHAMADERA, unHachaDeMadera.getDurabilidad());
     }
 
     @Test
@@ -20,7 +27,23 @@ public class HachaTest {
         Constructor unConstructor = new HachaMaderaConstructor();
         Hacha unHachaDeMadera = (Hacha)unConstructor.construir();
 
-        assertEquals(2, unHachaDeMadera.getFuerza());
+        assertEquals(FUERZAHACHAMADERA, unHachaDeMadera.getFuerza());
+    }
+
+    @Test
+    public void testHachaDePiedraCon200Durabilidad(){
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
+
+        assertEquals(DURABILIDADHACHAPIEDRA, unHachaDePiedra.getDurabilidad());
+    }
+
+    @Test
+    public void testHachaDePiedraCon5Fuerza(){
+        Constructor unConstructor = new HachaMaderaConstructor();
+        Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
+
+        assertEquals(FUERZAHACHAPIEDRA, unHachaDePiedra.getFuerza());
     }
 
     @Test
@@ -28,7 +51,7 @@ public class HachaTest {
         Constructor unConstructor = new HachaMetalConstructor();
         Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
 
-        assertEquals(400, unHachaDeMetal.getDurabilidad());
+        assertEquals(DURABILIDADHACHAMETAL, unHachaDeMetal.getDurabilidad());
     }
 
     @Test
@@ -36,8 +59,9 @@ public class HachaTest {
         Constructor unConstructor = new HachaMetalConstructor();
         Hacha unHachaDeMetal = (Hacha)unConstructor.construir();
 
-        assertEquals(10, unHachaDeMetal.getFuerza());
+        assertEquals(FUERZAHACHAMETAL, unHachaDeMetal.getFuerza());
     }
+
 
 
     @Test
