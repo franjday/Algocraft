@@ -28,6 +28,10 @@ public class Inventario {
     public void EliminarHerramienta(Herramienta unaHerramienta) { inventarioHerramientas.remove(unaHerramienta);
     }
 
+    public Herramienta eliminarHerramienta(int posicion){
+        return inventarioHerramientas.remove(posicion);
+    }
+
     public void EliminarMaterial(Material unMaterial) { inventarioMateriales.remove(unMaterial);
     }
 

@@ -16,6 +16,7 @@ public class Jugador implements Contenible {
     private Mapa mapa;
     private Posicion posicionActual;
     private String vista;
+    private static Jugador instance;
 
 
     public Jugador(Mapa unMapa, Posicion posicion){
@@ -25,6 +26,7 @@ public class Jugador implements Contenible {
         posicionActual = posicion;
         mapa = unMapa;
         vista = FRENTE;
+        instance = this;
     }
 
     // RELACION CON HERRAMIENTAS Y MATERIALES
@@ -42,6 +44,10 @@ public class Jugador implements Contenible {
     }
 
     public ArrayList getInventarioHerramientas(){ return inventario.getHerramientas(); }
+
+    public Herramienta removerHerramienta(int posicion){
+        return inventario.eliminarHerramienta(posicion);
+    }
 
     public void recolectar(Diamante unDiamante){
         herramientaEquipada.recolectar(unDiamante);
@@ -131,5 +137,9 @@ public class Jugador implements Contenible {
 
     public String getVista(){
         return this.vista;
+    }
+
+    public static Jugador getInstance(){
+        return instance;
     }
 }
