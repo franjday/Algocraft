@@ -62,8 +62,6 @@ public class Algocraft extends Application {
     }
 
     private void setBotones(BorderPane borderPane, Stage primaryStage){
-        String audioFile = "sonidos/click_boton.mp3";
-        AudioClip clickBoton = new AudioClip(getClass().getResource(audioFile).toExternalForm());
 
         Button botonJugar = new Button();
         Image imagenJugar = new Image("Vista/imagenes/menu/BotonJugar.png");

@@ -1,13 +1,12 @@
 package Modelo.Juego;
 
-import Modelo.Desgastes.DesgastableLineal;
-import Modelo.Herramientas.PicoDeMadera;
 import Modelo.Tablero.*;
 import Modelo.Jugador.*;
 
 public class Juego {
     private Jugador jugador;
     private Mapa mapa;
+    private static Juego instance;
     private final static int
             DIMENSION_HORIZONTAL = 20,
             DIMENSION_VERTICAL = 20;
@@ -16,6 +15,7 @@ public class Juego {
         mapa = new Mapa(DIMENSION_HORIZONTAL, DIMENSION_VERTICAL);
         Posicion posicionDelJugador = new Posicion(9,9);
         jugador = new Jugador(mapa, posicionDelJugador);
+        instance = this;
         inicializarMapa(posicionDelJugador);
     }
 
@@ -51,5 +51,9 @@ public class Juego {
 
     public Jugador getJugador(){
         return this.jugador;
+    }
+
+    public static Juego getInstance(){
+        return instance;
     }
 }

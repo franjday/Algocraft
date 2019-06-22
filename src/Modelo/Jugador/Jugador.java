@@ -33,6 +33,10 @@ public class Jugador implements Contenible {
         return this.herramientaEquipada;
     }
 
+    public void equiparHerramienta(Herramienta unaHerramienta){
+        this.herramientaEquipada = unaHerramienta;
+    }
+
     public ArrayList getInventarioMateriales(){
         return inventario.getMateriales();
     }
