@@ -31,10 +31,10 @@ public class Algocraft extends Application {
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("Algocraft");
-        Image imagenTitulo = new Image("Vista/imagenes/titulo.png");
+        Image imagenTitulo = new Image("Vista/imagenes/menu/titulo.png");
         ImageView titulo = new ImageView(imagenTitulo);
 
-        Image imagenIcono = new Image("Vista/imagenes/icono.png");
+        Image imagenIcono = new Image("Vista/imagenes/menu/icono.png");
 
         reproducirMusica();
 
@@ -66,14 +66,14 @@ public class Algocraft extends Application {
         AudioClip clickBoton = new AudioClip(getClass().getResource(audioFile).toExternalForm());
 
         Button botonJugar = new Button();
-        Image imagenJugar = new Image("Vista/imagenes/BotonJugar.png");
+        Image imagenJugar = new Image("Vista/imagenes/menu/BotonJugar.png");
         ImageView jugar = new ImageView(imagenJugar);
         botonJugar.setGraphic(jugar);
         botonJugar.setOnAction(new BotonJugarEventHandler(this, primaryStage));
 
 
         Button botonSalir = new Button();
-        Image imagenSalir = new Image("Vista/imagenes/BotonSalir.png");
+        Image imagenSalir = new Image("Vista/imagenes/menu/BotonSalir.png");
         ImageView salir = new ImageView(imagenSalir);
         botonSalir.setGraphic(salir);
         botonSalir.setOnAction(e -> Platform.exit());

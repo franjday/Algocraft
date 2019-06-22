@@ -7,10 +7,15 @@ import Modelo.Materiales.*;
 import Modelo.Tablero.*;
 
 public class Jugador implements Contenible {
+    private static String FRENTE = "frente";
+    private static String TORSO = "torso";
+    private static String IZQ = "izquierda";
+    private static String DER = "der";
     private Herramienta herramientaEquipada;
     private Inventario inventario;
     private Mapa mapa;
     private Posicion posicionActual;
+    private String vista;
 
 
     public Jugador(Mapa unMapa, Posicion posicion){
@@ -19,6 +24,7 @@ public class Jugador implements Contenible {
         inventario = new Inventario();
         posicionActual = posicion;
         mapa = unMapa;
+        vista = FRENTE;
     }
 
     // RELACION CON HERRAMIENTAS Y MATERIALES
@@ -89,6 +95,7 @@ public class Jugador implements Contenible {
 
         mapa.moverObjeto(posicionActual, nuevaPosicion);
         this.posicionActual = nuevaPosicion;
+        vista = TORSO;
     }
 
     public void moverAbajo(){
@@ -97,6 +104,7 @@ public class Jugador implements Contenible {
 
         mapa.moverObjeto(posicionActual, nuevaPosicion);
         this.posicionActual = nuevaPosicion;
+        vista = FRENTE;
     }
 
     public void moverIzquierda(){
@@ -105,6 +113,7 @@ public class Jugador implements Contenible {
 
         mapa.moverObjeto(posicionActual, nuevaPosicion);
         this.posicionActual = nuevaPosicion;
+        vista = IZQ;
     }
 
     public void moverDerecha(){
@@ -113,5 +122,10 @@ public class Jugador implements Contenible {
 
         mapa.moverObjeto(posicionActual, nuevaPosicion);
         this.posicionActual = nuevaPosicion;
+        vista = DER;
+    }
+
+    public String getVista(){
+        return this.vista;
     }
 }

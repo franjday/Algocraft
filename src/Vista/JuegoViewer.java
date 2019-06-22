@@ -31,7 +31,7 @@ public class JuegoViewer {
         Jugador jugador = nuevoJuego.getJugador();
 
         MapaViewer mapaView = new MapaViewer(mapa);
-        HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas());
+        HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas(), jugador.getHerramientaEquipada());
 
         juegoView.getChildren().addAll(mapaView, herramientasView);
 
