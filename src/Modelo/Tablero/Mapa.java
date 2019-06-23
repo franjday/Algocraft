@@ -67,11 +67,16 @@ public class Mapa {
         return casillero.getContenido();
     }
 
-    public void moverObjeto(Posicion origen, Posicion destino){
+    public boolean moverObjeto(Posicion origen, Posicion destino){
         Jugador jugador = (Jugador) this.getContenido(origen);
 
-        this.agregarContenido(jugador, destino);
-        this.removerContenido(origen);
+        try{
+            this.agregarContenido(jugador, destino);
+            this.removerContenido(origen);
+            return true;
+        }catch(CasilleroOcupado e){
+            return false;
+        }
     }
 
     private boolean areaOcupada(Posicion posicionInicial, int tamano){

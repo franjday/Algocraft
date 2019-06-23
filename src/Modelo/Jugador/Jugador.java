@@ -103,36 +103,40 @@ public class Jugador implements Contenible {
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.subirEnY();
 
-        mapa.moverObjeto(posicionActual, nuevaPosicion);
-        this.posicionActual = nuevaPosicion;
-        vista = TORSO;
+        if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {
+            this.posicionActual = nuevaPosicion;
+            vista = TORSO;
+        }
     }
 
     public void moverAbajo(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.bajarEnY();
 
-        mapa.moverObjeto(posicionActual, nuevaPosicion);
+        if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
         this.posicionActual = nuevaPosicion;
         vista = FRENTE;
+        }
     }
 
     public void moverIzquierda(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.bajarEnX();
 
-        mapa.moverObjeto(posicionActual, nuevaPosicion);
-        this.posicionActual = nuevaPosicion;
-        vista = IZQ;
+        if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
+            this.posicionActual = nuevaPosicion;
+            vista = IZQ;
+        }
     }
 
     public void moverDerecha(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.subirEnX();
 
-        mapa.moverObjeto(posicionActual, nuevaPosicion);
-        this.posicionActual = nuevaPosicion;
-        vista = DER;
+        if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {
+            this.posicionActual = nuevaPosicion;
+            vista = DER;
+        }
     }
 
     public String getVista(){

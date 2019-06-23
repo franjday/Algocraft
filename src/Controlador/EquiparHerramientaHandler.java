@@ -4,9 +4,8 @@ import Modelo.Herramientas.*;
 import Modelo.Jugador.Jugador;
 import Vista.HerramientaInvViewer;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 
-public class EquiparHerramientaHandler implements EventHandler<ActionEvent> {
+public class EquiparHerramientaHandler extends BotonEventHandler {
     private int posicion;
 
     public EquiparHerramientaHandler(int posicionHerramienta){
@@ -15,6 +14,7 @@ public class EquiparHerramientaHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event){
+        super.handle(event);
         Jugador jugador = Jugador.getInstance();
         Herramienta herramientaEquipada = jugador.getHerramientaEquipada();
         Herramienta herramientaEquipable = jugador.removerHerramienta(posicion);

@@ -6,8 +6,7 @@ import Modelo.Tablero.Mapa;
 import Modelo.Tablero.Posicion;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class MapaTest {
 
@@ -61,9 +60,8 @@ public class MapaTest {
         Posicion nuevaPosicion = new Posicion(1, 1);
 
         unMapa.agregarContenido(unJugador, unaPosicion);
-        unMapa.moverObjeto(unaPosicion, nuevaPosicion);
+        assert(unMapa.moverObjeto(unaPosicion, nuevaPosicion));
 
-        assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
     }
 
     @Test
@@ -81,6 +79,22 @@ public class MapaTest {
             }
         }
         assertEquals(9, cantidadDeMaderas);
+    }
+
+    @Test
+    public void testMoverObjetoAPosicionOcupada(){
+        Mapa unMapa = new Mapa(3,3);
+        Posicion posicionJugador = new Posicion(0, 0);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        unMapa.agregarContenido(unJugador, posicionJugador);
+
+        Posicion posicionMadera = new Posicion(1, 0);
+        Madera unaMadera = new Madera();
+        unMapa.agregarContenido(unaMadera, posicionMadera);
+
+        assertFalse(unMapa.moverObjeto(posicionJugador, posicionMadera));
+
+        assertEquals(unJugador, unMapa.getContenido(posicionJugador));
     }
 
     @Test(expected = ExcedeLimiteDeMapa.class)

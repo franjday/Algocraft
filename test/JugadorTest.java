@@ -73,7 +73,7 @@ public class JugadorTest {
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
     }
 
-    @Test(expected = CasilleroOcupado.class)
+    @Test
     public void testJugadorIntentaMoverseACasilleroOcupado(){
         Mapa unMapa = new Mapa(5, 5);
         Posicion posicionJugador = new Posicion(3, 3);
@@ -83,6 +83,7 @@ public class JugadorTest {
         Madera unaMadera = new Madera();
 
         unMapa.agregarContenido(unaMadera, posicionMadera);
+        unMapa.agregarContenido(unJugador, posicionJugador);
         unJugador.moverDerecha();
 
         assertEquals(unJugador, unMapa.getContenido(posicionJugador));
@@ -97,7 +98,7 @@ public class JugadorTest {
         unJugador.moverAbajo();
     }
 
-    @Test(expected = CasilleroOcupado.class)
+    @Test
     public void testMovimientoExitosoLuegoDeIntentarMoverseACasilleroOcupado(){
         Mapa unMapa = new Mapa(5, 5);
         Posicion posicionJugador = new Posicion(3, 3);
@@ -108,6 +109,7 @@ public class JugadorTest {
         Madera unaMadera = new Madera();
 
         unMapa.agregarContenido(unaMadera, posicionMadera);
+        unMapa.agregarContenido(unJugador, posicionJugador);
         unJugador.moverDerecha();
         unJugador.moverArriba();
 
