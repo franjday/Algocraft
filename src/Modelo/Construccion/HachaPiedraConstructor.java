@@ -11,7 +11,7 @@ public class HachaPiedraConstructor extends Constructor{
 
     public Herramienta construir(){
         Desgastable lineal = new DesgastableLineal(coeficiente);
-        return new Hacha(durabilidad,fuerza,lineal);
+        return new HachaDePiedra(durabilidad,fuerza,lineal);
     }
 
 }

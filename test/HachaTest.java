@@ -9,8 +9,10 @@ public class HachaTest {
 
     private final int DURABILIDADHACHAMADERA = 100;
     private final int FUERZAHACHAMADERA = 2;
+
     private final int DURABILIDADHACHAPIEDRA = 200;
     private final int FUERZAHACHAPIEDRA = 5;
+
     private final int DURABILIDADHACHAMETAL = 400;
     private final int FUERZAHACHAMETAL = 10;
 
