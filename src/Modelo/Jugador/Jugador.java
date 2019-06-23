@@ -10,7 +10,7 @@ public class Jugador implements Contenible {
     private static String FRENTE = "frente";
     private static String TORSO = "torso";
     private static String IZQ = "izquierda";
-    private static String DER = "der";
+    private static String DER = "derecha";
     private Herramienta herramientaEquipada;
     private Inventario inventario;
     private Mapa mapa;
@@ -98,21 +98,21 @@ public class Jugador implements Contenible {
 
     public void moverArriba(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.subirEnY();
+        nuevaPosicion.bajarEnY();
 
+        vista = TORSO;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {
             this.posicionActual = nuevaPosicion;
-            vista = TORSO;
         }
     }
 
     public void moverAbajo(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.bajarEnY();
+        nuevaPosicion.subirEnY();
 
+        vista = FRENTE;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
         this.posicionActual = nuevaPosicion;
-        vista = FRENTE;
         }
     }
 
@@ -120,9 +120,9 @@ public class Jugador implements Contenible {
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.bajarEnX();
 
+        vista = IZQ;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
             this.posicionActual = nuevaPosicion;
-            vista = IZQ;
         }
     }
 
@@ -130,14 +130,18 @@ public class Jugador implements Contenible {
         Posicion nuevaPosicion = new Posicion(posicionActual);
         nuevaPosicion.subirEnX();
 
+        vista = DER;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {
             this.posicionActual = nuevaPosicion;
-            vista = DER;
         }
     }
 
     public String getVista(){
         return this.vista;
+    }
+
+    public Posicion getPosicionActual() {
+        return posicionActual;
     }
 
     public static Jugador getInstance(){

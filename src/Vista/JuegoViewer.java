@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.MovimientoEventHandler;
 import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
 import Modelo.Tablero.Mapa;
@@ -12,6 +13,7 @@ public class JuegoViewer {
     private static JuegoViewer Instance;
     private Stage primaryStage;
     private Algocraft algocraft;
+    private Juego juego;
 
     public JuegoViewer(Stage primaryStage, Algocraft algocraft){
         this.primaryStage = primaryStage;
@@ -27,6 +29,7 @@ public class JuegoViewer {
         juegoView.setId("juegoView");
 
         Juego nuevoJuego = new Juego();
+        juego = nuevoJuego;
         Mapa mapa = nuevoJuego.getMapa();
         Jugador jugador = nuevoJuego.getJugador();
 
@@ -37,8 +40,24 @@ public class JuegoViewer {
 
         Scene escenarioJuego = new Scene(juegoView, 820, 860);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
+        escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(jugador));
         this.primaryStage.setScene(escenarioJuego);
 
         Instance = this;
+    }
+
+    public void actualizar(){
+        StackPane juegoView = new StackPane();
+        juegoView.setId("juegoView");
+
+        MapaViewer vistaMapa = new MapaViewer(juego.getMapa());
+        HerramientaInvViewer herramientaView = new HerramientaInvViewer(juego.getJugador().getInventarioHerramientas(),
+                                                                        juego.getJugador().getHerramientaEquipada());
+
+        juegoView.getChildren().addAll(vistaMapa, herramientaView);
+        Scene escenarioJuego = new Scene(juegoView);
+        escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
+        escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(juego.getJugador()));
+        this.primaryStage.setScene(escenarioJuego);
     }
 }

@@ -24,48 +24,53 @@ public class MapaViewer extends GridPane{
         for(int i = 0; i < ANCHO; i++){
             for(int j = 0; j < ALTO; j++){
                 Contenible contenido = mapa.getContenido(new Posicion(i,j));
-                if(contenido instanceof Madera){
-                    ImageView arbol = new ImageView(new Image("Vista/imagenes/mapa/arbol.png"));
-                    this.add(arbol, i, j);
-                }
-                else if(contenido instanceof Piedra){
-                    ImageView piedra = new ImageView(new Image("Vista/imagenes/mapa/piedra.png"));
-                    this.add(piedra, i, j);
-                }
-                else if(contenido instanceof Metal){
-                    ImageView metal = new ImageView(new Image("Vista/imagenes/mapa/metal.png"));
-                    this.add(metal, i, j);
-                }
-                else if(contenido instanceof Jugador){
-                    ImageView jugador = GenerarImagenJugador((Jugador)contenido);
-                    this.add(jugador, i, j);
-                }
-                else{
-                    ImageView espacioVacio = new ImageView(new Image("Vista/imagenes/mapa/espacioVacio.png"));
-                    this.add(espacioVacio, i, j);
-                }
+                ImageView imagenContenido = generarImagenContenido(contenido);
+                this.add(imagenContenido, i, j);
             }
         }
         instance = this;
         return this;
     }
 
-    private ImageView GenerarImagenJugador(Jugador jugador) {
+    private ImageView generarImagenContenido(Contenible contenido){
+        if(contenido instanceof Madera)
+            return new ImageView(new Image("Vista/imagenes/mapa/arbol.png"));
+
+        else if(contenido instanceof Piedra)
+            return new ImageView(new Image("Vista/imagenes/mapa/piedra.png"));
+
+        else if(contenido instanceof Metal)
+            return new ImageView(new Image("Vista/imagenes/mapa/metal.png"));
+
+        else if(contenido instanceof Jugador)
+            return generarImagenJugador((Jugador)contenido);
+
+        else
+            return new ImageView(new Image("Vista/imagenes/mapa/espacioVacio.png"));
+    }
+
+
+    private ImageView generarImagenJugador(Jugador jugador) {
         String vista = jugador.getVista();
+        ImageView imagen = new ImageView(new Image("Vista/imagenes/mapa/frontChar.png"));
         switch (vista) {
             case "frente":
-                return new ImageView(new Image("Vista/imagenes/mapa/frontChar.png"));
+                imagen = new ImageView(new Image("Vista/imagenes/mapa/frontChar.png"));
+                break;
 
             case "torso":
-                return new ImageView(new Image("Vista/imagenes/mapa/backChar.png"));
+                imagen = new ImageView(new Image("Vista/imagenes/mapa/backChar.png"));
+                break;
 
             case "izquierda":
-                return new ImageView(new Image("Vista/imagenes/mapa/leftChar.png"));
+                imagen = new ImageView(new Image("Vista/imagenes/mapa/leftChar.png"));
+                break;
 
             case "derecha":
-                return new ImageView(new Image("Vista/imagenes/mapa/rightChar.png"));
+                imagen = new ImageView(new Image("Vista/imagenes/mapa/rightChar.png"));
+                break;
         }
-        return new ImageView(new Image("Vista/imagenes/mapa/frontChar.png"));
+        return imagen;
     }
 
     public static MapaViewer getInstance(){

@@ -74,7 +74,7 @@ public class Mapa {
             this.agregarContenido(jugador, destino);
             this.removerContenido(origen);
             return true;
-        }catch(CasilleroOcupado e){
+        }catch(CasilleroOcupado | ExcedeLimiteDeMapa e){
             return false;
         }
     }

@@ -22,10 +22,6 @@ public class Juego {
         Posicion posicionDelJugador = new Posicion(9,9);
         jugador = new Jugador(mapa, posicionDelJugador);
         instance = this;
-        jugador.recolectarHerramienta(new PicoDeMadera(100, 2, new DesgastableLineal(2)));
-        jugador.recolectarHerramienta(new PicoDePiedra(100, 2, new DesgastableLineal(10)));
-        jugador.recolectarHerramienta(new PicoDeMetal(100, 2, new DesgastableLineal(2)));
-        jugador.recolectarHerramienta(new PicoFino(1000, 10, new DesgastableFino()));
         inicializarMapa(posicionDelJugador);
     }
 
