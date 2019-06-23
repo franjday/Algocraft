@@ -38,7 +38,7 @@ public class JuegoViewer {
 
         juegoView.getChildren().addAll(mapaView, herramientasView);
 
-        Scene escenarioJuego = new Scene(juegoView, 820, 860);
+        Scene escenarioJuego = new Scene(juegoView, 900, 900);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
         escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(jugador));
         this.primaryStage.setScene(escenarioJuego);
