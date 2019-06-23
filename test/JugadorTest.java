@@ -131,4 +131,64 @@ public class JugadorTest {
         assertEquals(unJugador, unMapa.getContenido(posicionJugador));
         assertNull(unMapa.getContenido(nuevaPosicion));
     }
+
+    @Test
+    public void testJugadorRompeMadera(){
+
+        Mapa unMapa = new Mapa(5, 5);
+        Posicion posicionJugador = new Posicion(3, 3);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        Madera madera = new Madera();
+        int durabilidad = madera.getDurabilidad();
+
+        unJugador.recolectar(madera);
+
+        assert(madera.getDurabilidad() == durabilidad-2 );
+
+    }
+
+    @Test
+    public void testJugadorRompePiedra(){
+
+        Mapa unMapa = new Mapa(5, 5);
+        Posicion posicionJugador = new Posicion(3, 3);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        Piedra piedra = new Piedra();
+        int durabilidad = piedra.getDurabilidad();
+
+        unJugador.recolectar(piedra);
+
+        assert(piedra.getDurabilidad() == durabilidad );
+
+    }
+
+    @Test
+    public void testJugadorRompeMetal(){
+
+        Mapa unMapa = new Mapa(5, 5);
+        Posicion posicionJugador = new Posicion(3, 3);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        Metal metal = new Metal();
+        int durabilidad = metal.getDurabilidad();
+
+        unJugador.recolectar(metal);
+
+        assert(metal.getDurabilidad() == durabilidad );
+
+    }
+
+    @Test
+    public void testJugadorRompeDiamante(){
+
+        Mapa unMapa = new Mapa(5, 5);
+        Posicion posicionJugador = new Posicion(3, 3);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        Diamante diamante = new Diamante();
+        int durabilidad = diamante.getDurabilidad();
+
+        unJugador.recolectar(diamante);
+
+        assert(diamante.getDurabilidad() == durabilidad);
+
+    }
 }
