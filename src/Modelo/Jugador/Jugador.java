@@ -2,6 +2,7 @@ package Modelo.Jugador;
 
 import java.util.*;
 import Modelo.Construccion.*;
+import Modelo.Excepciones.SinHerramientaEquipada;
 import Modelo.Herramientas.*;
 import Modelo.Materiales.*;
 import Modelo.Tablero.*;
@@ -49,41 +50,51 @@ public class Jugador implements Contenible {
         return inventario.eliminarHerramienta(posicion);
     }
 
+
     public void recolectar(Diamante unDiamante){
-        herramientaEquipada.recolectar(unDiamante);
         if(herramientaEquipada.estaRota()){
-            inventario.EliminarHerramienta(herramientaEquipada);
+            this.herramientaEquipada = new SinHerramienta();
+            throw new SinHerramientaEquipada();
         }
+        herramientaEquipada.recolectar(unDiamante);
+
         if(unDiamante.SePuedeRecolectar()){
             inventario.RecolectarMaterial(unDiamante);
         }
     }
 
     public void recolectar(Metal unMetal){
-        herramientaEquipada.recolectar(unMetal);
         if(herramientaEquipada.estaRota()){
-            inventario.EliminarHerramienta(herramientaEquipada);
+            this.herramientaEquipada = new SinHerramienta();
+            throw new SinHerramientaEquipada();
         }
+        herramientaEquipada.recolectar(unMetal);
+
         if(unMetal.SePuedeRecolectar()){
             inventario.RecolectarMaterial(unMetal);
         }
     }
 
     public void recolectar(Piedra unaPiedra){
-        herramientaEquipada.recolectar(unaPiedra);
         if(herramientaEquipada.estaRota()){
-            inventario.EliminarHerramienta(herramientaEquipada);
+            this.herramientaEquipada = new SinHerramienta();
+            throw new SinHerramientaEquipada();
         }
+        herramientaEquipada.recolectar(unaPiedra);
+
         if(unaPiedra.SePuedeRecolectar()){
             inventario.RecolectarMaterial(unaPiedra);
         }
     }
 
     public void recolectar(Madera unaMadera){
-        herramientaEquipada.recolectar(unaMadera);
+
         if(herramientaEquipada.estaRota()){
-            inventario.EliminarHerramienta(herramientaEquipada);
+            this.herramientaEquipada = new SinHerramienta();
+            throw new SinHerramientaEquipada();
         }
+        herramientaEquipada.recolectar(unaMadera);
+
         if(unaMadera.SePuedeRecolectar()){
             inventario.RecolectarMaterial(unaMadera);
         }
