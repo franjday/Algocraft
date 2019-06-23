@@ -106,13 +106,13 @@ public class MapaTest {
         unMapa.agregarContenido(unJugador, unaPosicion);
     }
 
-    @Test(expected = ExcedeLimiteDeMapa.class)
+    @Test
     public void testMoverObjetoAPosicionFueraDeRango(){
         Mapa unMapa = new Mapa(3, 3);
         Posicion unaPosicion = new Posicion(0, 0);
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
         Posicion nuevaPosicion = new Posicion(-1, -1);
 
-        unMapa.moverObjeto(unaPosicion, nuevaPosicion);
+        assertFalse(unMapa.moverObjeto(unaPosicion, nuevaPosicion));
     }
 }

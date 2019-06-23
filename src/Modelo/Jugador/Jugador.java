@@ -112,7 +112,7 @@ public class Jugador implements Contenible {
 
         vista = FRENTE;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
-        this.posicionActual = nuevaPosicion;
+            this.posicionActual = nuevaPosicion;
         }
     }
 

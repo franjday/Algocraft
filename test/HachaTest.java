@@ -34,7 +34,7 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraCon200Durabilidad(){
-        Constructor unConstructor = new HachaMaderaConstructor();
+        Constructor unConstructor = new HachaPiedraConstructor();
         Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
 
         assertEquals(DURABILIDADHACHAPIEDRA, unHachaDePiedra.getDurabilidad());
@@ -42,7 +42,7 @@ public class HachaTest {
 
     @Test
     public void testHachaDePiedraCon5Fuerza(){
-        Constructor unConstructor = new HachaMaderaConstructor();
+        Constructor unConstructor = new HachaPiedraConstructor();
         Hacha unHachaDePiedra = (Hacha)unConstructor.construir();
 
         assertEquals(FUERZAHACHAPIEDRA, unHachaDePiedra.getFuerza());

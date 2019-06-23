@@ -34,7 +34,7 @@ public class PicoTest {
 
     @Test
     public void testPicoDePiedraCon200Durabilidad(){
-        Constructor unConstructor = new PicoMaderaConstructor();
+        Constructor unConstructor = new PicoPiedraConstructor();
         Pico unPicoDeMadera = (Pico)unConstructor.construir();
 
         assertEquals(DURABILIDADPICOPIEDRA, unPicoDeMadera.getDurabilidad());
@@ -42,7 +42,7 @@ public class PicoTest {
 
     @Test
     public void testPicoDePiedraCon4Fuerza(){
-        Constructor unConstructor = new PicoMaderaConstructor();
+        Constructor unConstructor = new PicoPiedraConstructor();
         Pico unPicoDeMadera = (Pico)unConstructor.construir();
 
         assertEquals(FUERZAPICOPIEDRA, unPicoDeMadera.getFuerza());

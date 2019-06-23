@@ -26,7 +26,7 @@ public class JugadorTest {
         Mapa unMapa = new Mapa(5, 5);
         Posicion unaPosicion = new Posicion(3, 3);
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
-        Posicion nuevaPosicion = new Posicion(3, 4);
+        Posicion nuevaPosicion = new Posicion(3, 2);
 
         unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverArriba();
@@ -39,7 +39,7 @@ public class JugadorTest {
         Mapa unMapa = new Mapa(5, 5);
         Posicion unaPosicion = new Posicion(3, 3);
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
-        Posicion nuevaPosicion = new Posicion(3, 2);
+        Posicion nuevaPosicion = new Posicion(3, 4);
 
         unMapa.agregarContenido(unJugador, unaPosicion);
         unJugador.moverAbajo();
@@ -89,13 +89,15 @@ public class JugadorTest {
         assertEquals(unJugador, unMapa.getContenido(posicionJugador));
     }
 
-    @Test(expected = ExcedeLimiteDeMapa.class)
+    @Test
     public void testJugadorIntentaMoverseFueraDelMapa(){
         Mapa unMapa = new Mapa(5, 5);
         Posicion posicionJugador = new Posicion(0, 0);
         Jugador unJugador = new Jugador(unMapa, posicionJugador);
+        unMapa.agregarContenido(unJugador, posicionJugador);
 
-        unJugador.moverAbajo();
+        unJugador.moverArriba();
+        assertEquals(unJugador, unMapa.getContenido(posicionJugador));
     }
 
     @Test
@@ -111,7 +113,7 @@ public class JugadorTest {
         unMapa.agregarContenido(unaMadera, posicionMadera);
         unMapa.agregarContenido(unJugador, posicionJugador);
         unJugador.moverDerecha();
-        unJugador.moverArriba();
+        unJugador.moverAbajo();
 
         assertEquals(unJugador, unMapa.getContenido(nuevaPosicion));
         assertEquals(unaMadera, unMapa.getContenido(posicionMadera));
