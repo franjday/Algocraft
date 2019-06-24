@@ -11,8 +11,17 @@ import Vista.MapaViewer;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.AudioClip;
+
+import java.io.File;
 
 public class RecolectarEventHandler implements EventHandler<KeyEvent> {
+
+    private static final String talarFile = "src/Vista/sonidos/talar.mp3";
+    private static final AudioClip talar = new AudioClip(new File(talarFile).toURI().toString());
+
+    private static final String minarFile = "src/Vista/sonidos/minar.mp3";
+    private static final AudioClip minar = new AudioClip(new File(minarFile).toURI().toString());
 
     @Override
     public void handle(KeyEvent event){
@@ -44,12 +53,16 @@ public class RecolectarEventHandler implements EventHandler<KeyEvent> {
 
                 if (contenido instanceof Madera) {
                     jugador.recolectar((Madera) contenido);
+                    talar.play();
                 } else if (contenido instanceof Piedra) {
                     jugador.recolectar((Piedra) contenido);
+                    minar.play();
                 } else if (contenido instanceof Metal) {
                     jugador.recolectar((Metal) contenido);
+                    minar.play();
                 } else if (contenido instanceof Diamante) {
                     jugador.recolectar((Diamante) contenido);
+                    minar.play();
                 }
                 mapa.recolectarMaterial(posicionObjetivo);
 
