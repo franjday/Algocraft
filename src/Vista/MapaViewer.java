@@ -12,7 +12,7 @@ public class MapaViewer extends GridPane{
     private static MapaViewer instance;
     private Mapa mapa;
     private static int ANCHO = 20;
-    private static int ALTO = 20;
+    private static int ALTO = 15;
 
     public MapaViewer(Mapa mapa){
         this.mapa = mapa;
@@ -41,6 +41,9 @@ public class MapaViewer extends GridPane{
 
         else if(contenido instanceof Metal)
             return new ImageView(new Image("Vista/imagenes/mapa/metal.png"));
+
+        else if(contenido instanceof Diamante)
+            return new ImageView(new Image("Vista/imagenes/mapa/diamante.png"));
 
         else if(contenido instanceof Jugador)
             return generarImagenJugador((Jugador)contenido);

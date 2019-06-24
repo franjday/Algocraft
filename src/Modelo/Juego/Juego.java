@@ -11,14 +11,13 @@ public class Juego {
     private static Juego instance;
     private final static int
             DIMENSION_HORIZONTAL = 20,
-            DIMENSION_VERTICAL = 20;
+            DIMENSION_VERTICAL = 15;
 
     public Juego(){
         mapa = new Mapa(DIMENSION_HORIZONTAL, DIMENSION_VERTICAL);
         Posicion posicionDelJugador = new Posicion(9,9);
         jugador = new Jugador(mapa, posicionDelJugador);
         instance = this;
-        jugador.recolectarHerramienta(new PicoDeMetal(400, 10, new DesgastableFino()));
         inicializarMapa(posicionDelJugador);
     }
 
@@ -32,20 +31,21 @@ public class Juego {
 
     private void inicializarContenidoMadera(){
         mapa.agregarContenidoEnArea("madera", 1, 1, 4);
-        mapa.agregarContenidoEnArea("madera", 1, 13, 4);
+        mapa.agregarContenidoEnArea("madera", 1, 10, 3);
     }
 
     private void inicializarContenidoPiedra(){
-        mapa.agregarContenidoEnArea("piedra", 2, 8, 4);
+        mapa.agregarContenidoEnArea("piedra", 8, 1, 3);
+        mapa.agregarContenidoEnArea("piedra", 6, 6, 2);
     }
 
     private void inicializarContenidoMetal(){
-        mapa.agregarContenidoEnArea("metal", 17, 17, 2);
+        mapa.agregarContenidoEnArea("metal", 17, 12, 2);
         mapa.agregarContenidoEnArea("metal", 15, 5, 3);
     }
 
     private void inicializarContenidoDiamante(){
-        mapa.agregarContenidoEnArea("diamante", 10, 17, 2);
+        mapa.agregarContenidoEnArea("diamante", 10, 12, 2);
     }
 
     public Mapa getMapa() {
