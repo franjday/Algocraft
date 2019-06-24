@@ -53,6 +53,7 @@ public class Jugador implements Contenible {
 
 
     public void recolectar(Diamante unDiamante){
+        herramientaEquipada.recolectar(unDiamante);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
@@ -60,6 +61,7 @@ public class Jugador implements Contenible {
     }
 
     public void recolectar(Metal unMetal){
+        herramientaEquipada.recolectar(unMetal);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
@@ -67,6 +69,7 @@ public class Jugador implements Contenible {
     }
 
     public void recolectar(Piedra unaPiedra){
+        herramientaEquipada.recolectar(unaPiedra);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
@@ -74,7 +77,7 @@ public class Jugador implements Contenible {
     }
 
     public void recolectar(Madera unaMadera){
-
+        herramientaEquipada.recolectar(unaMadera);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
