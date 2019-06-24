@@ -4,7 +4,7 @@ import Modelo.Excepciones.CasilleroOcupado;
 
 public class Casillero {
     private boolean casilleroOcupado = false;
-    private Contenible contenido;
+    private Contenible contenido = null;
 
     public void contener(Contenible unContenido) throws CasilleroOcupado{
         if(this.casilleroOcupado)

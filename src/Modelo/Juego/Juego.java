@@ -1,5 +1,7 @@
 package Modelo.Juego;
 
+import Modelo.Desgastes.DesgastableFino;
+import Modelo.Herramientas.PicoDeMetal;
 import Modelo.Tablero.*;
 import Modelo.Jugador.*;
 
@@ -16,6 +18,7 @@ public class Juego {
         Posicion posicionDelJugador = new Posicion(9,9);
         jugador = new Jugador(mapa, posicionDelJugador);
         instance = this;
+        jugador.recolectarHerramienta(new PicoDeMetal(400, 10, new DesgastableFino()));
         inicializarMapa(posicionDelJugador);
     }
 

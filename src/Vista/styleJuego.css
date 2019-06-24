@@ -61,3 +61,7 @@
 #picoFinoMano{
     -fx-background-image: url("imagenes/botonesInventario/picoFinoMano.png");
 }
+
+#manoVacia{
+    -fx-background-image: url("imagenes/botonesInventario/manoVacia.png");
+}

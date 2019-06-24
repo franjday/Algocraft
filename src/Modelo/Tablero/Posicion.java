@@ -22,19 +22,19 @@ public class Posicion {
         return posicionY;
     }
 
-    public void subirEnX(){
+    public void aumentarEnX(){
         this.posicionX++;
     }
 
-    public void bajarEnX(){
+    public void disminuirEnX(){
         this.posicionX--;
     }
 
-    public void subirEnY(){
+    public void aumentarEnY(){
         this.posicionY++;
     }
 
-    public void bajarEnY(){
+    public void disminuirEnY(){
         this.posicionY--;
     }
 

@@ -67,6 +67,14 @@ public class Mapa {
         return casillero.getContenido();
     }
 
+    public boolean casilleroOcupado(Posicion posicion){
+        Casillero casillero = getCasillero(posicion);
+        if(casillero == null)
+            return false;
+
+        return casillero.casilleroEstaOcupado();
+    }
+
     public boolean moverObjeto(Posicion origen, Posicion destino){
         Jugador jugador = (Jugador) this.getContenido(origen);
 

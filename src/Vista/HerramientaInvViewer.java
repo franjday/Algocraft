@@ -29,7 +29,8 @@ public class HerramientaInvViewer extends GridPane {
             botonVacio.setId("botonVacio");
             this.add(botonVacio, i+1, 0);
         }
-        actualizarHerramientaView(herramientaEquipada);
+        loadHerramientaEquipada(herramientaEquipada);
+        loadHerramientas();
         return this;
     }
 
@@ -59,6 +60,12 @@ public class HerramientaInvViewer extends GridPane {
             }
             else if(herramienta instanceof HachaDeMetal){
                 botonHerramienta.setId("botonHachaMetal");
+            }
+            else{
+                botonHerramienta.setId("botonVacio");
+                this.add(botonHerramienta, i, 0);
+                i++;
+                continue;
             }
             botonHerramienta.setOnAction(e -> new BotonHerramientaEventHandler(posicion-1, botonHerramienta));
             this.add(botonHerramienta, i, 0);
@@ -90,12 +97,14 @@ public class HerramientaInvViewer extends GridPane {
         else if(herramientaEquipada instanceof HachaDeMetal){
             botonHerramientaEquipada.setId("hachaMetalMano");
         }
+        else
+            botonHerramientaEquipada.setId("manoVacia");
         this.add(botonHerramientaEquipada, 0, 0);
     }
 
     public void actualizarHerramientaView(Herramienta herramientaEquipada){
-        loadHerramientaEquipada(herramientaEquipada);
-        loadHerramientas();
+        this.getChildren().clear();
+        iniciarView(herramientaEquipada);
     }
 
     public static HerramientaInvViewer getInstance(){

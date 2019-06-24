@@ -56,7 +56,6 @@ public class Jugador implements Contenible {
         herramientaEquipada.recolectar(unDiamante);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
-            throw new SinHerramientaEquipada();
         }
     }
 
@@ -64,7 +63,6 @@ public class Jugador implements Contenible {
         herramientaEquipada.recolectar(unMetal);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
-            throw new SinHerramientaEquipada();
         }
     }
 
@@ -72,7 +70,6 @@ public class Jugador implements Contenible {
         herramientaEquipada.recolectar(unaPiedra);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
-            throw new SinHerramientaEquipada();
         }
     }
 
@@ -80,7 +77,6 @@ public class Jugador implements Contenible {
         herramientaEquipada.recolectar(unaMadera);
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
-            throw new SinHerramientaEquipada();
         }
     }
 
@@ -97,7 +93,7 @@ public class Jugador implements Contenible {
 
     public void moverArriba(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.bajarEnY();
+        nuevaPosicion.disminuirEnY();
 
         vista = TORSO;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {
@@ -107,7 +103,7 @@ public class Jugador implements Contenible {
 
     public void moverAbajo(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.subirEnY();
+        nuevaPosicion.aumentarEnY();
 
         vista = FRENTE;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
@@ -117,7 +113,7 @@ public class Jugador implements Contenible {
 
     public void moverIzquierda(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.bajarEnX();
+        nuevaPosicion.disminuirEnX();
 
         vista = IZQ;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)){
@@ -127,7 +123,7 @@ public class Jugador implements Contenible {
 
     public void moverDerecha(){
         Posicion nuevaPosicion = new Posicion(posicionActual);
-        nuevaPosicion.subirEnX();
+        nuevaPosicion.aumentarEnX();
 
         vista = DER;
         if(mapa.moverObjeto(posicionActual, nuevaPosicion)) {

@@ -22,6 +22,7 @@ public class PicoDeMetal extends Pico{
 
     public void recolectar(Metal unMetal){
         this.durabilidad = (int) this.desgastable.desgastar(this.durabilidad);
+        unMetal.disminuirDurabilidad(this.fuerza);
     }
 
     public void recolectar(Diamante unDiamante){
