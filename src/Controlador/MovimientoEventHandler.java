@@ -1,7 +1,7 @@
 package Controlador;
 
 import Modelo.Jugador.Jugador;
-import Vista.JuegoViewer;
+import Vista.MapaViewer;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
@@ -24,7 +24,7 @@ public class MovimientoEventHandler implements EventHandler<KeyEvent> {
             case RIGHT: jugador.moverDerecha();
             break;
         }
-        JuegoViewer juegoView = JuegoViewer.getInstance();
-        juegoView.actualizar();
+        MapaViewer mapaView = MapaViewer.getInstance();
+        mapaView.actualizarMapaView();
     }
 }

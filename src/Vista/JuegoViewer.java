@@ -35,29 +35,15 @@ public class JuegoViewer {
 
         MapaViewer mapaView = new MapaViewer(mapa);
         HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas(), jugador.getHerramientaEquipada());
+        herramientasView.toFront();
 
         juegoView.getChildren().addAll(mapaView, herramientasView);
 
-        Scene escenarioJuego = new Scene(juegoView, 820, 860);
+        Scene escenarioJuego = new Scene(juegoView, 900, 900);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
         escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(jugador));
         this.primaryStage.setScene(escenarioJuego);
 
         Instance = this;
-    }
-
-    public void actualizar(){
-        StackPane juegoView = new StackPane();
-        juegoView.setId("juegoView");
-
-        MapaViewer vistaMapa = new MapaViewer(juego.getMapa());
-        HerramientaInvViewer herramientaView = new HerramientaInvViewer(juego.getJugador().getInventarioHerramientas(),
-                                                                        juego.getJugador().getHerramientaEquipada());
-
-        juegoView.getChildren().addAll(vistaMapa, herramientaView);
-        Scene escenarioJuego = new Scene(juegoView);
-        escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
-        escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(juego.getJugador()));
-        this.primaryStage.setScene(escenarioJuego);
     }
 }

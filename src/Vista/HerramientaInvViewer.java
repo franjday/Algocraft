@@ -51,8 +51,14 @@ public class HerramientaInvViewer extends GridPane {
             else if(herramienta instanceof PicoFino){
                 botonHerramienta.setId("botonPicoFino");
             }
-            else if(herramienta instanceof Hacha){
+            else if(herramienta instanceof HachaDeMadera){
                 botonHerramienta.setId("botonHachaMadera");
+            }
+            else if(herramienta instanceof HachaDePiedra){
+                botonHerramienta.setId("botonHachaPiedra");
+            }
+            else if(herramienta instanceof HachaDeMetal){
+                botonHerramienta.setId("botonHachaMetal");
             }
             botonHerramienta.setOnAction(e -> new BotonHerramientaEventHandler(posicion-1, botonHerramienta));
             this.add(botonHerramienta, i, 0);
@@ -75,8 +81,14 @@ public class HerramientaInvViewer extends GridPane {
         else if(herramientaEquipada instanceof PicoFino){
             botonHerramientaEquipada.setId("picoFinoMano");
         }
-        else if(herramientaEquipada instanceof Hacha){
+        else if(herramientaEquipada instanceof HachaDeMadera){
             botonHerramientaEquipada.setId("hachaMaderaMano");
+        }
+        else if(herramientaEquipada instanceof HachaDePiedra){
+            botonHerramientaEquipada.setId("hachaPiedraMano");
+        }
+        else if(herramientaEquipada instanceof HachaDeMetal){
+            botonHerramientaEquipada.setId("hachaMetalMano");
         }
         this.add(botonHerramientaEquipada, 0, 0);
     }

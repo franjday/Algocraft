@@ -1,11 +1,5 @@
 package Modelo.Juego;
 
-import Modelo.Desgastes.DesgastableFino;
-import Modelo.Desgastes.DesgastableLineal;
-import Modelo.Herramientas.PicoDeMadera;
-import Modelo.Herramientas.PicoDeMetal;
-import Modelo.Herramientas.PicoDePiedra;
-import Modelo.Herramientas.PicoFino;
 import Modelo.Tablero.*;
 import Modelo.Jugador.*;
 
