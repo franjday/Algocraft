@@ -73,6 +73,11 @@ public class MapaViewer extends GridPane{
         return imagen;
     }
 
+    public void actualizarMapaView(){
+        this.getChildren().clear();
+        iniciarMapa();
+    }
+
     public static MapaViewer getInstance(){
         return instance;
     }
