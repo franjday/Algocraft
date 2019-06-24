@@ -37,6 +37,7 @@ public class Jugador implements Contenible {
     }
 
     public void equiparHerramienta(Herramienta unaHerramienta){
+        inventario.RecolectarHerramienta(herramientaEquipada);
         this.herramientaEquipada = unaHerramienta;
     }
 
@@ -56,11 +57,6 @@ public class Jugador implements Contenible {
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
         }
-        herramientaEquipada.recolectar(unDiamante);
-
-        if(unDiamante.SePuedeRecolectar()){
-            inventario.RecolectarMaterial(unDiamante);
-        }
     }
 
     public void recolectar(Metal unMetal){
@@ -68,22 +64,12 @@ public class Jugador implements Contenible {
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
         }
-        herramientaEquipada.recolectar(unMetal);
-
-        if(unMetal.SePuedeRecolectar()){
-            inventario.RecolectarMaterial(unMetal);
-        }
     }
 
     public void recolectar(Piedra unaPiedra){
         if(herramientaEquipada.estaRota()){
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
-        }
-        herramientaEquipada.recolectar(unaPiedra);
-
-        if(unaPiedra.SePuedeRecolectar()){
-            inventario.RecolectarMaterial(unaPiedra);
         }
     }
 
@@ -93,15 +79,14 @@ public class Jugador implements Contenible {
             this.herramientaEquipada = new SinHerramienta();
             throw new SinHerramientaEquipada();
         }
-        herramientaEquipada.recolectar(unaMadera);
-
-        if(unaMadera.SePuedeRecolectar()){
-            inventario.RecolectarMaterial(unaMadera);
-        }
     }
 
     public void recolectarHerramienta(Herramienta unaHerramienta){
         inventario.RecolectarHerramienta(unaHerramienta);
+    }
+
+    public void obtenerMaterial(Material unMaterial){
+        inventario.RecolectarMaterial(unMaterial);
     }
 
 

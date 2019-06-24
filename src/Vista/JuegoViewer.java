@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.KeyPressEventHandler;
 import Controlador.MovimientoEventHandler;
 import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
@@ -41,7 +42,7 @@ public class JuegoViewer {
 
         Scene escenarioJuego = new Scene(juegoView, 900, 900);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
-        escenarioJuego.setOnKeyPressed(new MovimientoEventHandler(jugador));
+        escenarioJuego.setOnKeyPressed(new KeyPressEventHandler());
         this.primaryStage.setScene(escenarioJuego);
 
         Instance = this;

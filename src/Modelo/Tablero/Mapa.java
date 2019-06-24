@@ -95,4 +95,22 @@ public class Mapa {
         }
         return false;
     }
+
+    public boolean recolectarMaterial(Posicion posicionMaterial){
+        Casillero casillero = getCasillero(posicionMaterial);
+
+        if(casillero.casilleroEstaOcupado()){
+            Contenible contenido = casillero.getContenido();
+
+            if(contenido instanceof Material){
+                if(((Material) contenido).SePuedeRecolectar()){
+                    Jugador jugador = Jugador.getInstance();
+                    removerContenido(posicionMaterial);
+                    jugador.obtenerMaterial((Material)contenido);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

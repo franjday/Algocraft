@@ -1,5 +1,6 @@
 import Modelo.Excepciones.CasilleroOcupado;
 import Modelo.Excepciones.ExcedeLimiteDeMapa;
+import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
 import Modelo.Materiales.*;
 import Modelo.Tablero.Mapa;
@@ -111,8 +112,46 @@ public class MapaTest {
         Mapa unMapa = new Mapa(3, 3);
         Posicion unaPosicion = new Posicion(0, 0);
         Jugador unJugador = new Jugador(unMapa, unaPosicion);
+        unMapa.agregarContenido(unJugador, unaPosicion);
         Posicion nuevaPosicion = new Posicion(-1, -1);
 
         assertFalse(unMapa.moverObjeto(unaPosicion, nuevaPosicion));
+    }
+
+    @Test
+    public void testRecolectarMaterialSinDurabilidad(){
+        Mapa unMapa = new Mapa(3,3);
+        Posicion posicionJugador = new Posicion(0 ,0);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+
+        Madera unaMadera = new Madera();
+        Posicion posicionMadera = new Posicion(0, 1);
+        unMapa.agregarContenido(unaMadera, posicionMadera);
+
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+
+        assert(unMapa.recolectarMaterial(posicionMadera));
+    }
+
+    @Test
+    public void testRecolectarMaterialConDurabilidadNoEsPosible(){
+        Mapa unMapa = new Mapa(3,3);
+        Posicion posicionJugador = new Posicion(0 ,0);
+        Jugador unJugador = new Jugador(unMapa, posicionJugador);
+
+        Madera unaMadera = new Madera();
+        Posicion posicionMadera = new Posicion(0, 1);
+        unMapa.agregarContenido(unaMadera, posicionMadera);
+
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+        unJugador.recolectar(unaMadera);
+
+        assertFalse(unMapa.recolectarMaterial(posicionMadera));
     }
 }

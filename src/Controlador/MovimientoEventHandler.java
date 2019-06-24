@@ -6,14 +6,10 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
 public class MovimientoEventHandler implements EventHandler<KeyEvent> {
-    private Jugador jugador;
-
-    public MovimientoEventHandler(Jugador jugador){
-        this.jugador = jugador;
-    }
 
     @Override
     public void handle(KeyEvent event){
+        Jugador jugador = Jugador.getInstance();
         switch(event.getCode()){
             case UP: jugador.moverArriba();
             break;
