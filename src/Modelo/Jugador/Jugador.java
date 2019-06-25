@@ -2,7 +2,6 @@ package Modelo.Jugador;
 
 import java.util.*;
 import Modelo.Construccion.*;
-import Modelo.Excepciones.SinHerramientaEquipada;
 import Modelo.Herramientas.*;
 import Modelo.Materiales.*;
 import Modelo.Tablero.*;

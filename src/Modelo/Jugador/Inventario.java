@@ -13,6 +13,7 @@ public class Inventario {
     public Inventario() {
         inventarioHerramientas = new ArrayList<>();
         inventarioMateriales = new ArrayList<>();
+
     }
 
     public ArrayList getMateriales() {

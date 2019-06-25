@@ -13,7 +13,8 @@ public class InventarioViewer extends GridPane {
     private MesaDeCrafteo mesaDeCrafteo;
     private double OffsetX = 290;
     private double OffsetY = 363;
-    private static int TAM_INVENTARIO = 9;
+    private static int LARGO_INVENTARIO = 8;
+    private static int ANCHO_INVENTARIO = 2;
     private static int TAM_BOTON = 32;
     private double Hgap = 4;
     private double Vgap = 4;
@@ -22,11 +23,45 @@ public class InventarioViewer extends GridPane {
     private String METAL = "botonMetal";
     private String DIAMANTE = "botonDiamante";
 
-    public InventarioViewer(ArrayList<Material> materiales, MesaDeCrafteo mesa){
+    public InventarioViewer(ArrayList<Material> materiales, MesaDeCrafteo mesa) {
         this.Materiales = materiales;
         this.mesaDeCrafteo = mesa;
         instance = this;
         configurarVentana();
+        iniciarInventario();
+    }
+
+    private void iniciarInventario(){
+        int posFil = 0;
+        int posCol = 0;
+        for (Material material : Materiales) {
+            Button botonMaterial = new Button();
+            String Id = definirMaterial(material);
+            configurarBoton(botonMaterial, Id);
+
+            this.add(botonMaterial, posFil, posCol);
+            posFil++;
+            if (posFil > LARGO_INVENTARIO) {
+                posCol++;
+                posFil = 0;
+            }
+            if(posCol > ANCHO_INVENTARIO)
+                break;
+        }
+    }
+
+    private String definirMaterial(Material material) {
+        if(material instanceof Madera)
+            return MADERA;
+
+        else if(material instanceof Piedra)
+            return PIEDRA;
+
+        else if(material instanceof Metal)
+            return METAL;
+
+        else
+            return DIAMANTE;
     }
 
     private void configurarVentana(){
@@ -45,5 +80,10 @@ public class InventarioViewer extends GridPane {
 
     public static InventarioViewer getInstance(){
         return instance;
+    }
+
+    public void actualizar(){
+        this.getChildren().clear();
+        iniciarInventario();
     }
 }

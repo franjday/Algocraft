@@ -11,8 +11,10 @@ public class MostrarInventarioEventHandler implements EventHandler<KeyEvent> {
     @Override
     public void handle(KeyEvent event){
         InventarioViewer inventario = InventarioViewer.getInstance();
-        if(!visible)
+        if(!visible) {
             inventario.setVisible(true);
+            inventario.actualizar();
+        }
         else
             inventario.setVisible(false);
 
