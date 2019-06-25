@@ -4,8 +4,11 @@ import Modelo.Jugador.Jugador;
 import Vista.MapaViewer;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
+import static Controlador.AudioHandler.*;
+
 
 public class MovimientoEventHandler implements EventHandler<KeyEvent> {
+
 
     @Override
     public void handle(KeyEvent event){
@@ -20,6 +23,8 @@ public class MovimientoEventHandler implements EventHandler<KeyEvent> {
             case RIGHT: jugador.moverDerecha();
             break;
         }
+        caminar.setVolume(0.05);
+        caminar.play();
         MapaViewer mapaView = MapaViewer.getInstance();
         mapaView.actualizarMapaView();
     }

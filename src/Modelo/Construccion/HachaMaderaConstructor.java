@@ -5,7 +5,7 @@ import Modelo.Herramientas.*;
 
 public class HachaMaderaConstructor extends Constructor{
 
-    private int durabilidad = 12;
+    private int durabilidad = 100;
     private int fuerza = 2;
     private int coeficiente = fuerza;
 

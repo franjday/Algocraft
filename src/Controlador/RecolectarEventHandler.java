@@ -11,17 +11,11 @@ import Vista.MapaViewer;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.media.AudioClip;
 
-import java.io.File;
+import static Controlador.AudioHandler.*;
 
 public class RecolectarEventHandler implements EventHandler<KeyEvent> {
 
-    private static final String talarFile = "src/Vista/sonidos/talar.mp3";
-    private static final AudioClip talar = new AudioClip(new File(talarFile).toURI().toString());
-
-    private static final String minarFile = "src/Vista/sonidos/minar.mp3";
-    private static final AudioClip minar = new AudioClip(new File(minarFile).toURI().toString());
 
     @Override
     public void handle(KeyEvent event){
@@ -50,6 +44,8 @@ public class RecolectarEventHandler implements EventHandler<KeyEvent> {
         try {
             if (mapa.casilleroOcupado(posicionObjetivo)) {
                 Contenible contenido = mapa.getContenido(posicionObjetivo);
+                talar.setVolume(0.05);
+                minar.setVolume(0.05);
 
                 if (contenido instanceof Madera) {
                     jugador.recolectar((Madera) contenido);
@@ -71,13 +67,17 @@ public class RecolectarEventHandler implements EventHandler<KeyEvent> {
 
                 HerramientaInvViewer herramientasView = HerramientaInvViewer.getInstance();
                 herramientasView.actualizarHerramientaView(jugador.getHerramientaEquipada());
+            }else{
+                fallar.setVolume(0.05);
+                fallar.play();
             }
+
         }catch(ExcedeLimiteDeMapa e){}
         catch (SinHerramientaEquipada e){
             alertar();
         }
     }
-    public void alertar(){
+    private void alertar(){
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setTitle("Error");
         alerta.setHeaderText(null);
