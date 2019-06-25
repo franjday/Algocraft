@@ -4,6 +4,7 @@ import Modelo.Excepciones.CasilleroOcupado;
 import Modelo.Excepciones.ExcedeLimiteDeMapa;
 import Modelo.Jugador.Jugador;
 import Modelo.Materiales.*;
+import Modelo.Tablero.Creators.MaderaCreator;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -11,10 +12,13 @@ import java.util.HashMap;
 
 public class Mapa {
     private Map<Posicion, Casillero> mapa;
+    private int largo_X;
+    private int largo_Y;
 
     public Mapa(int x, int y){
         mapa = new HashMap<>();
-
+        largo_X = x;
+        largo_Y = y;
         for(int i = 0; i < x; i++){
             for(int j = 0; j < y; j++){
                 Posicion posicion = new Posicion(i, j);
@@ -28,7 +32,21 @@ public class Mapa {
         Casillero destino = this.getCasillero(posicion);
         destino.contener(nuevoContenido);
     }
+    public void nuevoMapaRandom(Posicion posicionJugador){
 
+        for( int i = 0; i < largo_X; i++){
+            for( int j = 0; j < largo_Y; j++){
+
+                Posicion posicion = new Posicion(i,j);
+                if(posicion.equals(posicionJugador))continue;
+
+                MaderaCreator creador = new MaderaCreator(6,50);
+                Material material = creador.generar(this,posicion);
+
+                if(material != null) this.agregarContenido(material,posicion);
+            }
+        }
+    }
     public void agregarContenidoEnArea(String material, int x, int y, int tamano) throws CasilleroOcupado{
         Posicion posicionInicial = new Posicion(x, y);
 

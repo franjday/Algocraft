@@ -24,12 +24,16 @@ public class Juego {
 
     private void inicializarMapa(Posicion posicionDelJugador){
         mapa.agregarContenido(jugador, posicionDelJugador);
-        inicializarContenidoMadera();
-        inicializarContenidoPiedra();
-        inicializarContenidoMetal();
-        inicializarContenidoDiamante();
+        //inicializarContenidoMadera();
+        //inicializarContenidoPiedra();
+        //inicializarContenidoMetal();
+        //inicializarContenidoDiamante();
+        inicializarRandom(posicionDelJugador);
     }
 
+    private void inicializarRandom(Posicion posicionDelJugador){
+        mapa.nuevoMapaRandom(posicionDelJugador);
+    }
     private void inicializarContenidoMadera(){
         mapa.agregarContenidoEnArea("madera", 1, 1, 4);
         mapa.agregarContenidoEnArea("madera", 1, 13, 4);

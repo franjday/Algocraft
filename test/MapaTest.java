@@ -1,11 +1,13 @@
 import Modelo.Excepciones.CasilleroOcupado;
 import Modelo.Excepciones.ExcedeLimiteDeMapa;
-import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
 import Modelo.Materiales.*;
+import Modelo.Tablero.Parcela;
 import Modelo.Tablero.Mapa;
 import Modelo.Tablero.Posicion;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
