@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.KeyPressEventHandler;
-import Controlador.MovimientoEventHandler;
 import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
 import Modelo.Tablero.Mapa;
@@ -40,7 +39,7 @@ public class JuegoViewer {
 
         juegoView.getChildren().addAll(mapaView, herramientasView);
 
-        Scene escenarioJuego = new Scene(juegoView, 900, 900);
+        Scene escenarioJuego = new Scene(juegoView, 900, 675);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");
         escenarioJuego.setOnKeyPressed(new KeyPressEventHandler());
         this.primaryStage.setScene(escenarioJuego);
