@@ -3,6 +3,7 @@ package Vista;
 import Controlador.KeyPressEventHandler;
 import Modelo.Juego.Juego;
 import Modelo.Jugador.Jugador;
+import Modelo.MesaDeCrafteo.MesaDeCrafteo;
 import Modelo.Tablero.Mapa;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -37,7 +38,11 @@ public class JuegoViewer {
         HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas(), jugador.getHerramientaEquipada());
         herramientasView.toFront();
 
-        juegoView.getChildren().addAll(mapaView, herramientasView);
+        InventarioViewer inventario = new InventarioViewer(jugador.getInventarioMateriales(), new MesaDeCrafteo());
+        inventario.setId("inventario");
+        inventario.setVisible(false);
+
+        juegoView.getChildren().addAll(mapaView, herramientasView, inventario);
 
         Scene escenarioJuego = new Scene(juegoView, 900, 675);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");

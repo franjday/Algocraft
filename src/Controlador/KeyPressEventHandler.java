@@ -14,6 +14,9 @@ public class KeyPressEventHandler implements EventHandler<KeyEvent> {
             case CONTROL:
                 new RecolectarEventHandler().handle(event);
                 break;
+            case I:
+                new MostrarInventarioEventHandler().handle(event);
+                break;
         }
     }
 }

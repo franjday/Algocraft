@@ -65,3 +65,10 @@
 #manoVacia{
     -fx-background-image: url("imagenes/botonesInventario/manoVacia.png");
 }
+
+#inventario{
+    -fx-background-image: url("imagenes/materialesInventario/inventarioMateriales.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-alignment: center;
+}
