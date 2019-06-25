@@ -39,7 +39,6 @@ public class JuegoViewer {
         herramientasView.toFront();
 
         InventarioViewer inventario = new InventarioViewer(jugador.getInventarioMateriales(), new MesaDeCrafteo());
-        inventario.setId("inventario");
         inventario.setVisible(false);
 
         juegoView.getChildren().addAll(mapaView, herramientasView, inventario);

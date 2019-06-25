@@ -1,0 +1,21 @@
+#inventario{
+    -fx-background-image: url("imagenes/materialesInventario/inventarioMateriales.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#botonMadera{
+    -fx-background-image: url("imagenes/materialesInventario/madera.png");
+}
+
+#botonPiedra{
+    -fx-background-image: url("imagenes/materialesInventario/piedra.png");
+}
+
+#botonMetal{
+    -fx-background-image: url("imagenes/materialesInventario/metal.png");
+}
+
+#botonDiamante{
+    -fx-background-image: url("imagenes/materialesInventario/diamante.png");
+}
