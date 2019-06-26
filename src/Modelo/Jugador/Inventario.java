@@ -41,7 +41,8 @@ public class Inventario {
     }
 
     public void RecolectarHerramienta(Herramienta unaHerramienta) {
-        inventarioHerramientas.add(unaHerramienta);
+        if(!(unaHerramienta instanceof SinHerramienta))
+            inventarioHerramientas.add(unaHerramienta);
     }
 
 

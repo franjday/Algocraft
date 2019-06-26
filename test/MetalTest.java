@@ -58,4 +58,16 @@ public class MetalTest {
 
         assertEquals(durabilidadMetal, unMetal.getDurabilidad());
     }
+
+    @Test
+    public void testMetalGolpeadoConPicoDePiedraReduceDurabilidad(){
+        Constructor unConstructor = new PicoPiedraConstructor();
+        Pico unPicoDePiedra = (Pico)unConstructor.construir();
+        Metal unMetal = new Metal();
+
+        int durabilidadMetal = unMetal.getDurabilidad();
+        unPicoDePiedra.recolectar(unMetal);
+
+        assertEquals(durabilidadMetal-unPicoDePiedra.getFuerza(), unMetal.getDurabilidad());
+    }
 }

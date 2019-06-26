@@ -14,6 +14,6 @@ public abstract class Material implements Contenible {
     }
 
     public boolean SePuedeRecolectar(){
-        return (durabilidad == 0);
+        return (durabilidad <= 0);
     }
 }
