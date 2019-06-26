@@ -1,10 +1,12 @@
 package Controlador;
 
+import Modelo.Excepciones.MaterialIngresadoEnPosicionInvalida;
 import Modelo.Jugador.Jugador;
 import Modelo.Materiales.*;
 import Modelo.MesaDeCrafteo.MesaDeCrafteo;
-import Vista.MesaDeCrafteoViewer;
+import Vista.MaterialesManager;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 
 public class AgregarEnMesaCrafteoHandler extends BotonEventHandler{
     private int posicionEnMesa;
@@ -21,10 +23,22 @@ public class AgregarEnMesaCrafteoHandler extends BotonEventHandler{
         super.handle(event);
         Jugador jugador = Jugador.getInstance();
         MesaDeCrafteo mesaDeCrafteo = jugador.getMesaDeCrafteo();
-        MesaDeCrafteoViewer mesaViewer = MesaDeCrafteoViewer.getInstance();
+        MaterialesManager materialesManager = MaterialesManager.getInstance();
 
-        mesaDeCrafteo.ingresarMaterial(material, posicionEnMesa);
-        mesaViewer.actualizar();
+        try {
+            mesaDeCrafteo.ingresarMaterial(material, posicionEnMesa);
+            jugador.getInventario().EliminarMaterial(material);
+            materialesManager.actualizar();
+        }catch(MaterialIngresadoEnPosicionInvalida e){
+            alertar();
+        }
+    }
 
+    private void alertar(){
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setTitle("Error");
+        alerta.setHeaderText(null);
+        alerta.setContentText("La posicion ya se encuentra ocupada!");
+        alerta.showAndWait();
     }
 }

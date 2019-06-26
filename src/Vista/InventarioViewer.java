@@ -12,10 +12,10 @@ public class InventarioViewer extends GridPane {
     private static InventarioViewer instance;
     private ArrayList<Material> Materiales;
     private MesaDeCrafteo mesaDeCrafteo;
-    private double OffsetX = 273;
-    private double OffsetY = 363;
+    private double OffsetX = 291;
+    private double OffsetY = 256;
     private static int LARGO_INVENTARIO = 8;
-    private static int ANCHO_INVENTARIO = 2;
+    private static int ANCHO_INVENTARIO = 6;
     private static int TAM_BOTON = 32;
     private double Hgap = 4;
     private double Vgap = 4;

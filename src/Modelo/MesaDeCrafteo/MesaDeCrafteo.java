@@ -30,7 +30,9 @@ public class MesaDeCrafteo {
 
     //Construye lo que hay en el constructor.
     public Herramienta construirHerramienta(){
-        return recetaActual.constructor.construir();
+        Herramienta herramientaNueva = recetaActual.constructor.construir();
+        recetaActual = new NuevaReceta();
+        return herramientaNueva;
     }
 
     public Material[] getReceta(){

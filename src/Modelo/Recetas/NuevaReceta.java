@@ -3,7 +3,7 @@ package Modelo.Recetas;
 import Modelo.Construccion.Constructor;
 import Modelo.Construccion.ConstructorVacio;
 import Modelo.Excepciones.RecetaEliminarMaterial;
-import Modelo.Excepciones.RecetaIngresarMaterial;
+import Modelo.Excepciones.MaterialIngresadoEnPosicionInvalida;
 import Modelo.Materiales.*;
 
 public class NuevaReceta extends Receta {
@@ -53,7 +53,7 @@ public class NuevaReceta extends Receta {
 
 
     public void ingresarMaterial(Material material, int posicion){
-        if(!(patron[posicion] instanceof Vacio)){ throw new RecetaIngresarMaterial(); }
+        if(!(patron[posicion] instanceof Vacio)){ throw new MaterialIngresadoEnPosicionInvalida(); }
         patron[posicion] = material;
     }
 

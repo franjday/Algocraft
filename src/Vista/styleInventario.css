@@ -1,5 +1,11 @@
 #inventario{
-    -fx-background-image: url("imagenes/materialesInventario/inventarioMateriales.png");
+    -fx-background-image: url("imagenes/materialesInventario/inventario.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#mesa{
+    -fx-background-image: url("imagenes/materialesInventario/mesa.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
@@ -22,4 +28,8 @@
 
 #botonVacio{
     -fx-background-image: url("imagenes/materialesInventario/vacio.png");
+}
+
+#botonConstruir{
+    -fx-background-image: url("imagenes/materialesInventario/botonConstruir.png");
 }
