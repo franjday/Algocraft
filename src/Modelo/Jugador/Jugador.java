@@ -29,7 +29,6 @@ public class Jugador implements Contenible {
         posicionActual = posicion;
         mapa = unMapa;
         vista = FRENTE;
-        this.recolectarHerramienta(new PicoFino(1000, 20, new DesgastableFino()));
         this.mesaDeCrafteo = new MesaDeCrafteo();
         instance = this;
     }
