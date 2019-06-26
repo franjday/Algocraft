@@ -17,6 +17,9 @@ public class AudioHandler {
     private static final String minarFile = "src/Vista/sonidos/minar.mp3";
     public static final AudioClip minar = new AudioClip(new File(minarFile).toURI().toString());
 
-    private static final String caminarFile = "src/Vista/sonidos/caminar.wav";
+    private static final String caminarFile = "src/Vista/sonidos/caminar.mp3";
     public static final AudioClip caminar = new AudioClip(new File(caminarFile).toURI().toString());
+
+    private static final String construccionFile = "src/Vista/sonidos/construccion.mp3";
+    public static final AudioClip construir = new AudioClip(new File(construccionFile).toURI().toString());
 }

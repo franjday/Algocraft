@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.BotonMaterialEventHandler;
 import Modelo.Materiales.*;
 import Modelo.MesaDeCrafteo.MesaDeCrafteo;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ public class InventarioViewer extends GridPane {
     private static InventarioViewer instance;
     private ArrayList<Material> Materiales;
     private MesaDeCrafteo mesaDeCrafteo;
-    private double OffsetX = 290;
+    private double OffsetX = 273;
     private double OffsetY = 363;
     private static int LARGO_INVENTARIO = 8;
     private static int ANCHO_INVENTARIO = 2;
@@ -27,7 +28,7 @@ public class InventarioViewer extends GridPane {
         this.Materiales = materiales;
         this.mesaDeCrafteo = mesa;
         instance = this;
-        configurarVentana();
+        configurarVentanaMateriales();
         iniciarInventario();
     }
 
@@ -38,6 +39,7 @@ public class InventarioViewer extends GridPane {
             Button botonMaterial = new Button();
             String Id = definirMaterial(material);
             configurarBoton(botonMaterial, Id);
+            botonMaterial.setOnAction(new BotonMaterialEventHandler(botonMaterial, material));
 
             this.add(botonMaterial, posFil, posCol);
             posFil++;
@@ -64,7 +66,7 @@ public class InventarioViewer extends GridPane {
             return DIAMANTE;
     }
 
-    private void configurarVentana(){
+    private void configurarVentanaMateriales(){
         this.setVgap(Vgap);
         this.setHgap(Hgap);
         this.getStylesheets().add("Vista/styleInventario.css");

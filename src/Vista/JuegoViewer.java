@@ -6,6 +6,7 @@ import Modelo.Jugador.Jugador;
 import Modelo.MesaDeCrafteo.MesaDeCrafteo;
 import Modelo.Tablero.Mapa;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -38,10 +39,16 @@ public class JuegoViewer {
         HerramientaInvViewer herramientasView = new HerramientaInvViewer(jugador.getInventarioHerramientas(), jugador.getHerramientaEquipada());
         herramientasView.toFront();
 
-        InventarioViewer inventario = new InventarioViewer(jugador.getInventarioMateriales(), new MesaDeCrafteo());
+        /*InventarioViewer inventario = new InventarioViewer(jugador.getInventarioMateriales(), new MesaDeCrafteo());
         inventario.setVisible(false);
 
-        juegoView.getChildren().addAll(mapaView, herramientasView, inventario);
+        MesaDeCrafteoViewer mesaDeCrafteo = new MesaDeCrafteoViewer(jugador.getMesaDeCrafteo());
+        mesaDeCrafteo.setVisible(false);*/
+
+        MaterialesManager materialesManager = new MaterialesManager(jugador);
+        materialesManager.setVisible(false);
+
+        juegoView.getChildren().addAll(mapaView, herramientasView, materialesManager);
 
         Scene escenarioJuego = new Scene(juegoView, 900, 675);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");

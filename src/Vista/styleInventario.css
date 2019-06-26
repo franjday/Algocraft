@@ -19,3 +19,7 @@
 #botonDiamante{
     -fx-background-image: url("imagenes/materialesInventario/diamante.png");
 }
+
+#botonVacio{
+    -fx-background-image: url("imagenes/materialesInventario/vacio.png");
+}

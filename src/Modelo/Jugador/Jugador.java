@@ -2,8 +2,10 @@ package Modelo.Jugador;
 
 import java.util.*;
 import Modelo.Construccion.*;
+import Modelo.Desgastes.DesgastableFino;
 import Modelo.Herramientas.*;
 import Modelo.Materiales.*;
+import Modelo.MesaDeCrafteo.MesaDeCrafteo;
 import Modelo.Tablero.*;
 
 public class Jugador implements Contenible {
@@ -16,6 +18,7 @@ public class Jugador implements Contenible {
     private Mapa mapa;
     private Posicion posicionActual;
     private String vista;
+    private MesaDeCrafteo mesaDeCrafteo;
     private static Jugador instance;
 
 
@@ -26,6 +29,8 @@ public class Jugador implements Contenible {
         posicionActual = posicion;
         mapa = unMapa;
         vista = FRENTE;
+        this.recolectarHerramienta(new PicoFino(1000, 20, new DesgastableFino()));
+        this.mesaDeCrafteo = new MesaDeCrafteo();
         instance = this;
     }
 
@@ -48,6 +53,10 @@ public class Jugador implements Contenible {
 
     public Herramienta removerHerramienta(int posicion){
         return inventario.eliminarHerramienta(posicion);
+    }
+
+    public Inventario getInventario(){
+        return this.inventario;
     }
 
 
@@ -140,5 +149,9 @@ public class Jugador implements Contenible {
 
     public static Jugador getInstance(){
         return instance;
+    }
+
+    public MesaDeCrafteo getMesaDeCrafteo(){
+        return mesaDeCrafteo;
     }
 }

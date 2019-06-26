@@ -21,7 +21,7 @@ public class NuevaReceta extends Receta {
     private boolean compararConReceta(Receta recetaExterna){
 
         for (int i = 0; i < 9; i++ ) {
-            if(patron[i] != recetaExterna.patron[i] ){ return false;}
+            if(patron[i].getClass() != recetaExterna.patron[i].getClass() ){ return false;}
         }
         return true;
     }
@@ -65,5 +65,9 @@ public class NuevaReceta extends Receta {
         Material material = patron[posicion];
         patron[posicion] = Vacio.getInstance();
         return material;
+    }
+
+    public Material[] getPatron(){
+        return patron;
     }
 }

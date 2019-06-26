@@ -32,4 +32,8 @@ public class MesaDeCrafteo {
     public Herramienta construirHerramienta(){
         return recetaActual.constructor.construir();
     }
+
+    public Material[] getReceta(){
+        return recetaActual.getPatron();
+    }
 }
