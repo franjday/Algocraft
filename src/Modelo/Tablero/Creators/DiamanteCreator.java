@@ -10,7 +10,7 @@ public class DiamanteCreator extends AbstractCreator {
         this.setNextCreator(new VoidCreator(unRadio,unaDensidad));
         this.clave = "Diamante";
         this.instanciaDeMaterial = new Diamante();
-        this.probalibilidad = 1;
+        this.probalibilidad = 3;
 
 
     }

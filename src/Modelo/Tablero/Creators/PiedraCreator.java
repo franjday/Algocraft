@@ -9,6 +9,6 @@ public class PiedraCreator extends AbstractCreator {
         this.setNextCreator(new MetalCreator(unRadio,unaDensidad));
         this.clave = "Piedra";
         this.instanciaDeMaterial = new Piedra();
-        this.probalibilidad = 4;
+        this.probalibilidad = 5;
     }
 }
