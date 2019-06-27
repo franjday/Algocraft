@@ -40,7 +40,10 @@ public class JuegoViewer {
         MaterialesManager materialesManager = new MaterialesManager(jugador);
         materialesManager.setVisible(false);
 
-        juegoView.getChildren().addAll(mapaView, herramientasView, materialesManager);
+        ControlesViewer controlesViewer = new ControlesViewer(juegoView);
+        controlesViewer.toFront();
+
+        juegoView.getChildren().addAll(mapaView, herramientasView, materialesManager, controlesViewer);
 
         Scene escenarioJuego = new Scene(juegoView, 1025, 675);
         escenarioJuego.getStylesheets().add("Vista/styleJuego.css");

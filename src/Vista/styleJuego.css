@@ -2,6 +2,17 @@
     -fx-background-image: url("imagenes/mapa/background_juego.png");
 }
 
+#controlesView{
+    -fx-background-image: url("imagenes/controles/controles.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#botonAceptar{
+    -fx-background-image: url("imagenes/controles/botonAceptar.png");
+    -fx-padding: 0;
+}
+
 #botonHachaMadera{
     -fx-background-image: url("imagenes/botonesInventario/botonHachaMadera.png");
 }
