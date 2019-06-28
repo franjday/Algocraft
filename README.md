@@ -41,4 +41,15 @@ TP2 - Algocraft
 ## Juego:
 
  - [x] Se verifica que se inicia el juego con el terreno inicializado (materiales distribuidos en el mapa), el jugador inicializado.
+ 
+ 
+# Entrega 3 (jueves 27 de junio)
+
+- [x] Interfaz gráfica inicial básica: comienzo del juego, disposición de materiales en el tablero y menú inicial.
+
+# Entrega 4 - Final: (jueves 27 de junio)
+
+- [x] Trabajo Práctico completo funcionando, con interfaz gráfica final, sonidos e informe completo.
+
+
 
